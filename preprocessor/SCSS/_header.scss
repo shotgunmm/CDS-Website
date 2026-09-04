@@ -1,0 +1,38 @@
+@use 'mixins' as *;
+
+.header {
+	border-bottom: 3px solid #ff743e;
+	.wide {
+		padding-block: 1rem;
+	}
+
+	.nav {
+		.anchor {
+			cursor: pointer;
+
+			+ .icon {
+				cursor: pointer;
+			}
+		}
+
+		a,
+		.anchor {
+			color: #000;
+			font: 14px $mon;
+
+			&.active {
+				color: #739dd2;
+			}
+		}
+
+		li {
+			+ li {
+				margin-left: 1.5rem;
+			}
+		}
+
+		a {
+			text-decoration: none;
+		}
+	}
+}

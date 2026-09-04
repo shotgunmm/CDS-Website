@@ -1,0 +1,30 @@
+- let siteName = 'Consolidated Default Services, LLC';
+- let mainPage = false;
+- let parentPage = false;
+- let currentPage = false;
+- let childCurrentPage = false;
+- let pageAlias = false;
+
+block vars
+
+- let titleParts = [childCurrentPage, currentPage || pageAlias, parentPage, mainPage, siteName].filter(Boolean);
+- let pageTitle = titleParts.join(' | ');
+
+include ../partials/head.pug
+include ../partials/header.pug
+include ../components/all.pug
+include ../partials/footer.pug
+
+doctype html
+html(lang="en")
+    +head(pageTitle)
+        block head
+
+    body
+        +header
+
+        main#main(role="main")
+            block content
+
+        +footer
+            block footerScripts

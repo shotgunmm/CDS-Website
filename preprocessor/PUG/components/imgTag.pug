@@ -1,0 +1,20 @@
+mixin imgTag(pic, options = {})
+  -
+    const {
+      ext = 'jpg',
+      className = '',
+      height = null,
+      width = null,
+      lazy = true
+    } = options
+
+    const attrs = {}
+    if (height) attrs.height = height
+    if (width) attrs.width = width
+    if (lazy) attrs.loading = 'lazy'
+
+  img&attributes(attrs)(
+    src=`images/${pic}.${ext}`
+    alt=""
+    class=className
+  )

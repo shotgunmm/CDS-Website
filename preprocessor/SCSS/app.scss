@@ -1,0 +1,11 @@
+@use 'mixins' as *;
+@use 'header';
+@use 'hero';
+@use 'common';
+// @use 'scrollTop';
+@use 'typography';
+
+body {
+	text-wrap: pretty;
+	color: $gray;
+}

@@ -1,0 +1,92 @@
+include helpers.pug
+
+mixin navItem(item, level = 0)
+    -
+        const hasChildren = item.sub && item.sub.length
+        const isDeep = level > 0
+        const liClass = hasChildren ? (isDeep ? 'has-sub-more' : 'has-sub') : null
+        const isMain = item.label === mainPage
+        const isParent = item.label === parentPage
+        const isCurrent = item.label === currentPage
+        const aClass = (isMain || isParent || isCurrent) ? 'active' : null
+        const slug = slugify(item.label)
+        const href = item.href ? item.href : item.link === true ? `${slug}.html` : '#'
+
+    li(class=liClass)
+        if item.link === true || item.href
+            a(href=href, class=aClass)
+                = item.label
+                if item.status === 'sliced' || item.status === 'slicing'
+                    span.icon-status.ms-2.text-danger
+                        if item.status === 'sliced'
+                            i.bi.bi-check2
+                        else if item.status === 'slicing'
+                            i.bi.bi-code
+        else
+            span.anchor(class=aClass)
+                = item.label
+                if item.status === 'sliced' || item.status === 'slicing'
+                    span.icon-status.ms-2.text-danger
+                        if item.status === 'sliced'
+                            i.bi.bi-check2
+                        else if item.status === 'slicing'
+                            i.bi.bi-code
+
+        if hasChildren && !isDeep
+            span.icon.mt-3.ps-1
+                i.bi.bi-chevron-down
+
+        if hasChildren && isDeep
+            span.icon
+                i.bi.bi-chevron-down
+
+        if hasChildren
+            ul.nav.shadow
+                each subItem in item.sub
+                    +navItem(subItem, level + 1)
+
+-
+    const menu = [
+        {
+            label: 'Home',
+            link: true,
+            status: 'slicing'
+        },
+        { label: 'About Us' },
+        { label: 'Services' },
+        { label: 'Contact' },
+        //- {
+        //-     label: 'Products',
+        //-     sub: [
+        //-         { label: 'Lorem', link: false },
+        //-         { label: 'Ipsum', link: false }
+        //-     ]
+        //- },
+        //- {
+        //-     label: 'News & Events',
+        //-     sub: [
+        //-         { label: 'Lorem', link: false },
+        //-         { label: 'Ipsum', link: false }
+        //-     ]
+        //- },
+        //- { label: 'Contact', link: false }
+    ]
+
+
+mixin header
+    header#header.header(role='header')
+        .container-fluid.wide.site_header.d-flex.align-items-start.align-items-lg-center
+            .brand.me-lg-5
+                a(href="index.html", aria-label="Home")
+                    +imgTag('logo', {ext:'svg', height: '40', width: '230'})
+
+            nav.nav_site.d-none.d-lg-flex.align-items-center#siteNav(aria-label="Navigation", role="navigation")
+                ul.nav
+                    each item in menu
+                        +navItem(item)
+
+            +cta('GET STARTED', 'brand', 'ms-lg-auto')
+
+            #navCall.call_nav.align-items-center.d-flex.flex-column.d-lg-none.justify-content-center.ms-auto(role="button", tabindex="0", aria-label="Toggle Navigation")
+                -for (i=0; i<3; i++)
+                    span.line

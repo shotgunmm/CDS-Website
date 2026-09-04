@@ -1,0 +1,17 @@
+extends ../layouts/layout.pug
+
+block vars
+    - mainPage = 'Home';
+
+block content
+    section.hero.hero--home.shadow
+        .hero__bg-img
+            +imgTag('hero-home', {className: 'w-100'})
+        .hero__container.d-flex.justify-content-md-end
+            .wrap
+                .logo
+                    +imgTag('logo-art', {ext: 'svg', width: '258', height: '123'})
+                .copy.d-flex.flex-column-reverse
+                    h2 One Oversight Layer.#[br] Every Vendor. Every State.
+                    h3.text-uppercase.mb-4 Mortgage Default Oversight · Nationwide Since 2010
+

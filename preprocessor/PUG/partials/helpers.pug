@@ -1,0 +1,19 @@
+-
+    var slugify = slugify || function(str) {
+        return (str || '')
+            .toString()
+            .toLowerCase()
+            .replace(/&/g, '')
+            .replace(/\+/g, '')
+            .replace(/[^a-z0-9\s-]/g, '')
+            .trim()
+            .replace(/\s+/g, '-');
+    };
+
+    var pageHref = pageHref || function(page) {
+        return slugify(page) + '.html';
+    };
+
+    var getPageTitle = getPageTitle || function(parts) {
+        return (parts || []).filter(Boolean).join(' | ');
+    };

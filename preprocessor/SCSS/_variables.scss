@@ -1,0 +1,40 @@
+// Brand Colors
+$black: #000;
+$white: #fff;
+$yellow: #d7e317;
+$gray: #424243;
+$teal: #43697d;
+$midGray: #77787b;
+$dark: #58595b;
+$cool: #5a8ab5;
+$red: #8e0c3a;
+$olive: #828646;
+$lightgray: #d9d9d9;
+
+// Derived & Translucent Tints
+$midGray-10: rgba($midGray, 0.1);
+$midGray-20: rgba($midGray, 0.2);
+$teal-10: rgba($teal, 0.1);
+$cool-12: rgba($cool, 0.12);
+$cool-25: rgba($cool, 0.25);
+$black-50: rgba($black, 0.5);
+
+// Typography
+$mon: 'Montserrat', sans-serif;
+$int: 'Inter', sans-serif;
+$jos: 'Josefin Sans', sans-serif;
+
+// Transitions
+$transition-base: all 0.3s ease;
+$transition-fast: all 0.2s ease;
+$transition-linear: all 200ms linear;
+
+// Breakpoints
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-desktop: 1024px;
+$bp-xl: 1200px;
+$bp-custom-xl: 1285px;
+$bp-xxl: 1650px;
+$bp-xxxl: 1700px;

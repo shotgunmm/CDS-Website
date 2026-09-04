@@ -1,0 +1,121 @@
+@forward 'variables';
+@use 'variables' as *;
+
+// ==========================================
+// Media Query Mixins
+// ==========================================
+@mixin min($width) {
+	@media (min-width: $width) {
+		@content;
+	}
+}
+
+@mixin max($width) {
+	@media (max-width: $width) {
+		@content;
+	}
+}
+
+// Named Breakpoint Shortcuts
+@mixin mob {
+	@media (max-width: 767px) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin tab-mob {
+	@media (max-width: 991px) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media (min-width: 992px) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin xl {
+	@media (min-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin custom-xl {
+	@media (min-width: 1281px) {
+		@content;
+	}
+}
+
+@mixin xxl {
+	@media (min-width: 1650px) {
+		@content;
+	}
+}
+
+@mixin xxxl {
+	@media (min-width: 1700px) {
+		@content;
+	}
+}
+
+// ==========================================
+// Layout & Utility Mixins
+// ==========================================
+@mixin absolute-fill {
+	height: 100%;
+	inset: 0;
+	position: absolute;
+	width: 100%;
+}
+
+@mixin absolute-center {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin aspect-box($padding-top: 55%, $object-fit: cover) {
+	position: relative;
+
+	&:before {
+		content: '';
+		display: block;
+		padding-top: $padding-top;
+		pointer-events: none;
+		user-select: none;
+	}
+
+	img {
+		height: 100%;
+		left: 0;
+		object-fit: $object-fit;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}
+
+@mixin card-hover-lift($y: -5px, $shadow: 0 5px 10px rgba($black, 0.16)) {
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+
+	&:hover {
+		box-shadow: $shadow;
+		transform: translateY($y);
+	}
+}

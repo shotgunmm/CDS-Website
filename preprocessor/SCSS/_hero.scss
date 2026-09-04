@@ -1,0 +1,41 @@
+@use 'mixins' as *;
+
+.hero {
+	position: relative;
+	isolation: isolate;
+	padding-inline: 5rem;
+	&__bg-img {
+		@include absolute-fill;
+		z-index: -1;
+		img {
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&--home {
+		.wrap {
+			max-width: 615px;
+			min-height: 448px;
+		}
+	}
+	.wrap {
+		width: 100%;
+		background: #fff;
+		padding: 5rem 2rem 2.5rem;
+	}
+
+	.logo {
+		margin-bottom: 2rem;
+	}
+
+	h2 {
+		color: #ff743e;
+		font: 500 40px/1.25 $jos;
+	}
+
+	h3 {
+		color: #739dd2;
+		font: 700 16px $int;
+	}
+}
