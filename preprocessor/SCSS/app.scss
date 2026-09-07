@@ -1,11 +1,11 @@
 @use 'mixins' as *;
 @use 'header';
 @use 'hero';
+@use 'cdsMeta';
 @use 'common';
-// @use 'scrollTop';
+@use 'scrollTop';
 @use 'typography';
 
 body {
 	text-wrap: pretty;
-	color: $gray;
 }

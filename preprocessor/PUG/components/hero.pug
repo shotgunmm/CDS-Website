@@ -1,0 +1,31 @@
+mixin hero(h2, options = {})
+    -
+        const {
+            h1 = null,
+            pic = null,
+            pageSelectors,
+            alignment,
+            logo,
+            ext = 'svg',
+            width,
+            height
+        } = options
+
+        const heroPic = slugify(pic || mainPage)
+        const pageName = h1 || mainPage
+
+    section.hero.shadow(class=pageSelectors)
+        .hero__bg-img
+            +imgTag(`hero-${heroPic}`, {className: 'w-100'})
+
+        .hero__container(class=alignment === 'right' ? `d-flex justify-content-md-end` : '')
+            .hero__wrap
+                if logo
+                    .logo
+                        +imgTag(logo, {ext, width, height})
+
+                .copy
+                    h1.text-uppercase.mb-4= pageName
+
+                    if h2
+                        h2!= h2

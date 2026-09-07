@@ -1,1 +1,11 @@
 @use 'mixins' as *;
+
+h2 {
+	font: 40px $jos;
+}
+
+p {
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

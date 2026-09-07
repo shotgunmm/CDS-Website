@@ -4,14 +4,59 @@ block vars
     - mainPage = 'Home';
 
 block content
-    section.hero.hero--home.shadow
-        .hero__bg-img
-            +imgTag('hero-home', {className: 'w-100'})
-        .hero__container.d-flex.justify-content-md-end
-            .wrap
-                .logo
-                    +imgTag('logo-art', {ext: 'svg', width: '258', height: '123'})
-                .copy.d-flex.flex-column-reverse
-                    h2 One Oversight Layer.#[br] Every Vendor. Every State.
-                    h3.text-uppercase.mb-4 Mortgage Default Oversight · Nationwide Since 2010
+    +hero(
+        'One Oversight Layer.<br /> Every Vendor. Every State.',
+        {
+            h1: 'Mortgage Default Oversight · Nationwide Since 2010',
+            pageSelectors: 'hero--home',
+            alignment: 'right',
+            logo: 'logo-art',
+            width: '258',
+            height: '123'
+        }
+    )
 
+    section.cds-meta
+        .container(style="max-width:780px")
+            .row.text-center.justify-content-between
+                -
+                    let metaCDS = [
+                        {
+                            num: '2010',
+                            text: 'Trusted Since'
+                        },
+                        {
+                            num: '94',
+                            text: 'U.S. Bankruptcy Courts'
+                        },
+                        {
+                            num: '50+',
+                            text: 'States Covered'
+                        },
+                        {
+                            num: '8',
+                            text: 'Service Lines'
+                        }
+                    ]
+
+                each meta in metaCDS
+                    .col-md-auto
+                        h2.mb-0= meta.num
+                        p= meta.text
+
+    section.sec.img-copy
+        .container(style="max-width:1100px")
+            .row
+                .col-md-auto
+                    +imgTag('compass-pic', {ext: 'png', className: 'img-fluid'})
+                .col-md
+                    h2 CDS is the dedicated oversight partner for mortgage servicers and investors managing default portfolios across the country. We bring every law firm, vendor, and jurisdiction working your portfolio under one standard of accountability, consistency, and visibility.
+                    p We monitor every file, enforce every SLA, and hold every vendor accountable — so you stay compliant and in control without building the infrastructure to do it yourself.
+                    p We don't replace your vendors. We make them perform.
+                    .cta-row.mt-4
+                        each cta in ['schedule a consultation', 'explore services']
+                            +cta(cta, 'orange')
+
+    section.sec.challenges
+        .container
+            +headSec('The Challenge', 'Default Portfolios Are Getting Harder to Manage', 'Dozens of law firms. Multiple states. Evolving regulations. And the cost of building oversight in-house keeps climbing. CDS is the single layer of accountability across all of it — so you don\'t have to be.')

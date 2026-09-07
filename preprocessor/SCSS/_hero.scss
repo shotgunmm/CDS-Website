@@ -2,7 +2,7 @@
 
 .hero {
 	isolation: isolate;
-	padding-inline: 5rem;
+	padding-inline: 8rem;
 	position: relative;
 
 	&__bg-img {
@@ -16,13 +16,13 @@
 	}
 
 	&--home {
-		.wrap {
+		.hero__wrap {
 			max-width: 615px;
 			min-height: 448px;
 		}
 	}
 
-	.wrap {
+	&__wrap {
 		background: #fff;
 		padding: 5rem 2rem 2.5rem;
 		width: 100%;
@@ -32,13 +32,13 @@
 		margin-bottom: 2rem;
 	}
 
+	h1 {
+		color: #739dd2;
+		font: 700 16px $int;
+	}
+
 	h2 {
 		color: #ff743e;
 		font: 500 40px/1.25 $jos;
-	}
-
-	h3 {
-		color: #739dd2;
-		font: 700 16px $int;
 	}
 }

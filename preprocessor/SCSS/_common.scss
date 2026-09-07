@@ -11,15 +11,32 @@ a,
 	@include md {
 		padding-block: 5rem;
 	}
+
+	@include xxl {
+		padding-block: 8rem;
+	}
+}
+
+.heading {
+	h2 {
+		color: $teal;
+		font: 700 16px/1.5 $int;
+	}
+
+	h3 {
+		color: $orange;
+		font: 600 40px/1.5 $jos;
+	}
+
+	p {
+		color: $dark;
+		font: 18px/1.5 $jos;
+	}
 }
 
 @include md {
 	.h-md-100 {
 		height: 100%;
-	}
-
-	.border-md-end {
-		border-right: 1px solid $midGray;
 	}
 }
 
@@ -50,25 +67,15 @@ a,
 		}
 	}
 
-	&.dark {
-		background: $teal;
-		border: 1px solid $teal;
+	&.orange {
+		background: $orange;
+		border: 1px solid $orange;
 		color: $white !important;
 
 		&:hover {
 			background: $white;
-			border: 1px solid $gray;
-			color: $gray !important;
-		}
-	}
-
-	&.see-cta {
-		@include lg {
-			font-size: 14px;
-		}
-
-		@include xxl {
-			font-size: 16px;
+			border: 1px solid $orange;
+			color: $orange !important;
 		}
 	}
 }
@@ -103,86 +110,10 @@ a,
 	}
 }
 
-.box {
-	h2 {
-		font-size: 15px;
-
-		@include xxl {
-			font-size: 20px;
-		}
-	}
-
-	p {
-		font-size: 14px;
-
-		@include xxl {
-			font-size: 18px;
-		}
-	}
-
-	.link {
-		font: 700 14px $mon;
-		text-decoration: none;
-
-		.icon {
-			transition: transform 0.3s ease;
-		}
-
-		@include xxl {
-			font-size: 18px;
-		}
-	}
-
-	.img {
-		img {
-			height: 100%;
-			object-fit: cover;
-			width: 100%;
-		}
-	}
-
-	&:hover {
-		.link {
-			.icon {
-				transform: translateX(5px);
-			}
-		}
-	}
-}
-
-.cta-row {
-	color: $white;
-	font: 24px $mon;
-
-	@include xxl {
-		font-size: 30px;
-	}
-
-	.cta {
-		font-size: 18px;
-
-		@include xxl {
-			font-size: 24px;
-		}
-	}
-}
-
 .img-neg-mob {
 	@include mob {
 		margin-left: -1.5rem;
 		margin-right: -1.5rem;
-	}
-}
-
-.pt-mob-0 {
-	@include mob {
-		padding-top: 0;
-	}
-}
-
-@include custom-xl {
-	.mt-xl-6 {
-		margin-top: 6rem !important;
 	}
 }
 
@@ -202,69 +133,35 @@ a,
 	}
 }
 
-.meta-boxes {
-	background: $midGray-10;
-
-	.box {
-		background: $teal;
-		padding: 1.25rem;
-
-		@include md {
-			padding: 2rem;
-		}
-
-		.icon {
-			flex: 0 0 80px;
-			margin-right: 2rem;
-			width: 80px;
-		}
-
-		h2 {
-			color: $yellow;
-			font-size: 24px;
-
-			@include md {
-				font-size: 30px;
-			}
-		}
-
-		p {
-			color: $white;
-
-			@include md {
-				font-size: 20px;
-			}
-		}
-	}
-}
-
-.share-wrap {
-	h2 {
-		color: $dark;
-		font-size: 24px;
-	}
-
-	.share {
-		li {
-			margin-top: 1rem;
-
-			a {
-				border: 1px solid rgba($dark, 0.25);
-				color: $dark;
-				font: 20px/1.5 $mon;
-			}
-
-			+ li {
-				margin-left: 1rem;
-			}
-		}
-	}
-}
-
 .g-map {
 	@include aspect-box(60%);
 
 	iframe {
 		@include absolute-fill;
+	}
+}
+
+.img-copy {
+	border-bottom: 3px solid $orange;
+
+	@include md {
+		padding-block: 4rem;
+	}
+
+	h2 {
+		color: $orange;
+		font: 500 22px/1.5 $int;
+	}
+
+	p {
+		font: 18px/1.5 $int;
+	}
+
+	.cta {
+		font: 600 16px $int;
+
+		+ .cta {
+			margin-left: 2rem;
+		}
 	}
 }
