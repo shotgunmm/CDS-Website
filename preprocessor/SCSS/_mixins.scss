@@ -88,10 +88,16 @@
 	transform: translate(-50%, -50%);
 }
 
+@mixin imgFit($object-fit: cover) {
+	height: 100%;
+	object-fit: $object-fit;
+	width: 100%;
+}
+
 @mixin aspect-box($padding-top: 55%, $object-fit: cover) {
 	position: relative;
 
-	&:before {
+	&::before {
 		content: '';
 		display: block;
 		padding-top: $padding-top;
@@ -100,12 +106,10 @@
 	}
 
 	img {
-		height: 100%;
+		@include imgFit($object-fit);
 		left: 0;
-		object-fit: $object-fit;
 		position: absolute;
 		top: 0;
-		width: 100%;
 	}
 }
 

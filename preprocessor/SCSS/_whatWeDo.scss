@@ -1,0 +1,82 @@
+@use 'mixins' as *;
+
+.what-we-do {
+	isolation: isolate;
+	padding-block: 3rem;
+	position: relative;
+
+	.bod-end {
+		border-right: 1px solid $teal;
+	}
+
+	.img-bg {
+		@include absolute-fill;
+		z-index: -1;
+
+		img {
+			@include imgFit;
+		}
+	}
+
+	.services {
+		.service-name {
+			.inner {
+				cursor: pointer;
+
+				&:hover {
+					.name {
+						color: #000;
+					}
+				}
+			}
+
+			.num {
+				color: $teal;
+				font: 24px/1 $jos;
+				padding-right: 0.625rem;
+			}
+
+			.name {
+				color: #3f3f3f;
+				font: 500 16px/1 $int;
+			}
+
+			&.active {
+				.inner {
+					border-left: 4px solid $teal;
+
+					.num {
+						padding-left: 0.625rem;
+					}
+
+					.name {
+						color: #000;
+						font-weight: 700;
+					}
+				}
+			}
+
+			+ .service-name {
+				border-top: 1px solid $teal;
+			}
+		}
+
+		.service-wrap {
+			display: none;
+
+			h2 {
+				color: $orange;
+				font-size: 28px;
+				font-weight: 600;
+			}
+
+			p {
+				color: #3f3f3f;
+			}
+
+			&.active {
+				display: block;
+			}
+		}
+	}
+}

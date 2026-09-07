@@ -1,42 +1,43 @@
 include helpers.pug
 
 mixin footer()
-    //- - productLinks = ['Architectural CMU', 'Standard CMU', 'Insulated CMU', 'Low Carbon CMU', 'Acoustical CMU', 'Ballast Block', 'Keystone Walls']
-    //- - resourceLinks = ['Fire Ratings', 'Guide Specifications', 'Installation + Cleaning', 'TEC Notes & eDetails', 'Structural Masonry']
-    //- - companyLink =  ['About Us', 'History', 'Hey Heidi', 'Contact', 'Project Gallery']
+    - servicesLinks = ['Foreclosure Oversight', 'Bankruptcy Oversight', 'Litigation Oversight', 'Eviction Oversight']
+    - companyLinks = ['About Us', 'Services', 'Contact']
 
-    //- mixin linksCall(head, links)
-    //-     .col-md-4
-    //-         .links
-    //-             .head.d-flex.align-items-center
-    //-                 h2.mb-0= head
-    //-                 span.icon.d-md-none.ms-2
-    //-                     i.bi.bi-caret-right-fill
-    //-             ul.link.nav.flex-column
-    //-                 each link in links
-    //-                     li
-    //-                         a(href=pageHref(link))= link
+    mixin linksCall(head, links)
+        .col-md-4.mb-4
+            .links
+                h2.text-uppercase.mb-0= head
+                ul.link.nav.flex-column
+                    each link in links
+                        li
+                            a(href=pageHref(link))= link
 
-    //- footer.footer(role="contentinfo")
-    //-     .container.gx-md-5.gx-xxl-4
-    //-         .row
-    //-             .col-md-6
-    //-                 .logo
-    //-                     +imgTag('logo', 'svg', false, '92', '284')
-    //-                 .meta
-    //-                     p Manufacturing quality concrete masonry products since 1920.
-    //-                     p 978-632-0089
-    //-             .col-md-6
-    //-                 .row
-    //-                     +linksCall('Products', productLinks)
-    //-                     +linksCall('Resources', resourceLinks)
-    //-                     +linksCall('Company', companyLink)
-    //-         hr.my-0
+    footer.footer(role="contentinfo")
+        .container-fluid.wide
+            .row
+                .col-md-6.mb-4
+                    .meta-footer(style="max-width:360px")
+                        .logo.mb-4
+                            +imgTag('logo-footer', {ext:'svg'})
+                        .meta
+                            p Trusted oversight partner providing cradle-to-grave default services management for mortgage servicers and financial institutions nationwide.
+                .col-md-6
+                    .row
+                        +linksCall('Services', servicesLinks)
+                        +linksCall('company', companyLinks)
+                        .col-md-4.mb-4
+                            .links
+                                h2.text-uppercase.mb-0 contact
+                                p info@cds-default.com#[br] 972.331.2320#[br] www.CDS-Default.com
+            hr
 
-    //-         .row.justify-content-between.py-4
-    //-             each meta in ['&copy; 2026 Jandris Blocks', '202 High Street, Gardner, MA 01440']
-    //-                 .col-md-auto
-    //-                     p !{meta}
+            .row.justify-content-between.py-4
+                .col-md-auto
+                    p © 2026 Consolidated Default Services, LLC. All rights reserved.
+                .col-md-auto.link-terms
+                    a(href="#") Privacy Policy
+                    a(href="#") Terms of Service
 
     .scroll-top.d-none.d-lg-block(role="button", tabindex="0", aria-label="Scroll to top")
         svg.progress-circle.svg-content(width="100%", height="100%", viewBox="-1 -1 102 102")

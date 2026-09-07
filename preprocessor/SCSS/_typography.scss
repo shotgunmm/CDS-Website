@@ -1,7 +1,15 @@
 @use 'mixins' as *;
 
-h2 {
+h2,
+.h2 {
+	color: $teal;
 	font: 40px $jos;
+}
+
+p,
+.p {
+	color: #000;
+	font: 16px/1.5 $int;
 }
 
 p {

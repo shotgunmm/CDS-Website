@@ -1,0 +1,39 @@
+@use 'mixins' as *;
+
+.hording {
+	isolation: isolate;
+	padding-inline: 8rem;
+	position: relative;
+
+	&__bg-img {
+		@include absolute-fill;
+		z-index: -1;
+
+		img {
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__wrap {
+		background: #fff;
+		max-width: 545px;
+		min-height: 375px;
+		padding: 5rem 2rem 2.5rem;
+		width: 100%;
+	}
+
+	.logo {
+		margin-bottom: 2rem;
+	}
+
+	h2 {
+		color: #ff743e;
+		font: 600 40px/1.25 $jos;
+	}
+
+	p {
+		color: #3f3f3f;
+		font-size: 18px;
+	}
+}

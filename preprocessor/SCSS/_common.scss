@@ -17,6 +17,18 @@ a,
 	}
 }
 
+.sec-my {
+	margin-block: 3rem;
+
+	@include md {
+		margin-block: 5rem;
+	}
+
+	@include xxl {
+		margin-block: 8rem;
+	}
+}
+
 .heading {
 	h2 {
 		color: $teal;
@@ -30,7 +42,7 @@ a,
 
 	p {
 		color: $dark;
-		font: 18px/1.5 $jos;
+		font-size: 18px;
 	}
 }
 
@@ -96,7 +108,7 @@ a,
 	}
 }
 
-.container1254 {
+.container1280 {
 	max-width: 1024px;
 
 	@include xxl {

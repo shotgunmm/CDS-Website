@@ -1,0 +1,13 @@
+mixin hording(h2, text, cta)
+    -
+        const hordingPic = slugify(pic || mainPage)
+
+    section.sec-my.hording.shadow
+        .hording__bg-img
+            +imgTag(`hording-${hordingPic}`, {className: 'w-100'})
+
+        .hording__container
+            .hording__wrap                
+                h2.mb-4= h2
+                p= text
+                +cta(cta, 'orange')

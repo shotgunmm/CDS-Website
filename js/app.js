@@ -29,7 +29,36 @@ function fadeInSec() {
 	fadeInEle.forEach((ele) => observer.observe(ele));
 }
 
+function serviceToggle() {
+	const serviceNames = document.querySelectorAll('#whatWeDo .list-do .service-name');
+
+	const serviceWraps = document.querySelectorAll('#whatWeDo .service-wrap');
+
+	serviceNames.forEach((serviceName) => {
+		serviceName.addEventListener('click', function () {
+			const service = this.dataset.service;
+
+			serviceNames.forEach((item) => {
+				item.classList.remove('active');
+			});
+
+			this.classList.add('active');
+
+			serviceWraps.forEach((wrap) => {
+				wrap.classList.remove('active');
+			});
+
+			const matchingWrap = document.querySelector(`#whatWeDo .service-wrap[data-service="${service}"]`);
+
+			if (matchingWrap) {
+				matchingWrap.classList.add('active');
+			}
+		});
+	});
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	fadeInSec();
 	domCta();
+	serviceToggle();
 });

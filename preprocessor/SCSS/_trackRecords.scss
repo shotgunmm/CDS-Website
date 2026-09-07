@@ -1,0 +1,6 @@
+@use 'mixins' as *;
+
+.track-records {
+	border-block: 3px solid $orange;
+	padding-block: 2.5rem;
+}

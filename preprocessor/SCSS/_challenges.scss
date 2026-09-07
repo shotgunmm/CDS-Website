@@ -1,0 +1,27 @@
+@use 'mixins' as *;
+
+.challenges {
+	.box {
+		max-width: 360px;
+		padding: 1rem 1.25rem;
+
+		h2 {
+			font: 600 16px $int;
+			letter-spacing: 1px;
+		}
+	}
+
+	.note {
+		p {
+			color: $orange;
+			font-weight: 500;
+			font-size: 22px;
+		}
+	}
+
+	.bod-start {
+		+ .bod-start {
+			border-left: 1px solid $teal;
+		}
+	}
+}

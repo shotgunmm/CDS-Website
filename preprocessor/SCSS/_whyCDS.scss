@@ -1,0 +1,21 @@
+@use 'mixins' as *;
+
+.why-cds {
+	.box {
+		background: #fdfbf9;
+		margin-top: 2.5rem;
+
+		.icon {
+			margin-right: 0.625rem;
+		}
+
+		h2 {
+			font-size: 16px;
+			font-weight: 600;
+		}
+
+		p {
+			color: #3f3f3f;
+		}
+	}
+}

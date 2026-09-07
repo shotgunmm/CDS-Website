@@ -20,7 +20,7 @@ block content
         .container(style="max-width:780px")
             .row.text-center.justify-content-between
                 -
-                    let metaCDS = [
+                    const metaCDS = [
                         {
                             num: '2010',
                             text: 'Trusted Since'
@@ -57,6 +57,207 @@ block content
                         each cta in ['schedule a consultation', 'explore services']
                             +cta(cta, 'orange')
 
-    section.sec.challenges
-        .container
+    section.sec-my.challenges
+        .container.container1280
             +headSec('The Challenge', 'Default Portfolios Are Getting Harder to Manage', 'Dozens of law firms. Multiple states. Evolving regulations. And the cost of building oversight in-house keeps climbing. CDS is the single layer of accountability across all of it — so you don\'t have to be.')
+            -
+                const challengeBox = [
+                    {
+                        head: 'Fragmented Vendor Networks',
+                        text: 'Multiple law firms and vendors across jurisdictions with inconsistent  processes, timelines, and reporting — creating blind spots.'
+                    },
+                    {
+                        head: 'An Unforgiving Compliance Environment',
+                        text: 'OCC consent orders, CFPB enforcement actions, and GSE servicing mandates demand documentation and oversight that most servicers struggle to  maintain internally.'
+                    },
+                    {
+                        head: 'Cost of Internal Build-Out',
+                        text: 'Standing up an in-house oversight function requires dedicated staff,  technology, and institutional knowledge that takes years to develop.'
+                    }
+                ]
+
+            .row 
+                each box, index in challengeBox
+                    .col-md-4.bod-start.mt-5 
+                        .box.mx-auto 
+                            .head.d-flex.align-items-center.mb-3
+                                .h2.num.mb-0.me-2.pt-2= `${String(index + 1).padStart(2, '0')}`
+                                h2.text-uppercase.mb-0= box.head
+                            .text 
+                                p= box.text 
+
+            .note.text-center.mt-5
+                p That's exactly what CDS was built to solve.
+
+    section.sec-my.what-we-do 
+        .img-bg
+            +imgTag('what-we-do-bg')
+        .container.container1024 
+            +headSec('What we do', 'Full-Spectrum Default Oversight', 'Eight integrated service lines covering the full default lifecycle —  available as a complete portfolio solution or individual engagements tailored to your most pressing needs.')
+            -
+                const whatWeDo = [
+                    {
+                        head: 'Foreclosure Oversight',                        
+                        icon: true,
+                        text: 'Cradle-to-grave litigation monitoring with attorney performance scorecarding, driving efficiency, compliance, and predictable outcomes across your entire attorney matrix.'
+                    },
+                    {
+                        head: 'Bankruptcy Oversight',                        
+                        icon: null,
+                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
+                    },
+                    {
+                        head: 'Litigation Oversight',                        
+                        icon: null,
+                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
+                    },
+                    {
+                        head: 'Eviction Oversight',                        
+                        icon: null,
+                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
+                    },
+                    {
+                        head: 'Title Curative',                        
+                        icon: null,
+                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
+                    },
+                    {
+                        head: 'Claims Oversight',                        
+                        icon: null,
+                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
+                    },
+                    {
+                        head: 'Loss Mitigation',                        
+                        icon: null,
+                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
+                    },
+                    {
+                        head: 'FTE Staffing & Capacity',                        
+                        icon: null,
+                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
+                    }
+                ]
+
+            #whatWeDo.services.row.mt-5
+                .col-md-4.d-none.d-md-block.bod-end.pe-5
+                    .d-flex.flex-column.list-do
+                        each item, index in whatWeDo
+                            -
+                                const serviceSlug = item.head
+                                    .toLowerCase()
+                                    .trim()
+                                    .replace(/&/g, 'and')
+                                    .replace(/[^a-z0-9\s-]/g, '')
+                                    .replace(/\s+/g, '-')
+
+                            span.service-name.py-3(data-service=serviceSlug, class=(index === 0 ? 'active' : '')) 
+                                .inner.d-flex.align-items-center.py-1
+                                    span.num.pt-1= String(index + 1).padStart(2, '0') 
+                                    span.name.text-uppercase= item.head
+
+                .col-md.ps-md-5
+                    each item, index in whatWeDo
+                        -
+                            const serviceSlug = item.head
+                                .toLowerCase()
+                                .trim()
+                                .replace(/&/g, 'and')
+                                .replace(/[^a-z0-9\s-]/g, '')
+                                .replace(/\s+/g, '-')
+
+                        .service-wrap(data-service=serviceSlug, class=(index === 0 ? 'active' : ''))
+                            .service-name.d-md-none #{String(index + 1).padStart(2, '0')} #{item.head}
+
+                            if item.icon
+                                .service-text.d-flex
+                                    .icon.me-4
+                                        +imgTag(`${serviceSlug}-icon`, {ext: 'svg'})
+                                    .copy
+                                        .d-none.d-md-block
+                                            h2= item.head
+                                        p= item.text
+                                        +cta('Learn More', 'orange')
+                            else
+                                .copy
+                                    .d-none.d-md-block
+                                        h2= item.head
+                                    p= item.text
+                                    +cta('Learn More', 'orange')
+
+    section.track-records
+        .container(style="max-width:780px")
+            +headSec('proven track record', 'Results That Speak for Themselves')
+
+            .row.text-center.justify-content-between
+                -
+                    const trackRecords = [
+                        {
+                            num: '5,000+',
+                            text: 'Loans Under Oversight'
+                        },
+                        {
+                            num: 'Top-Tier',
+                            text: 'National Servicer Relationships'
+                        },
+                        {
+                            num: '98%',
+                            text: 'SLA Compliance Rate'
+                        }
+                    ]
+
+                each meta in trackRecords
+                    .col-md-auto.mt-4
+                        h2.mb-0= meta.num
+                        p= meta.text
+
+    section.sec-my.why-cds
+        .container-fluid.wide
+            +headSec('why cds', 'The CDS Difference')
+
+            .row.gx-md-5
+                -
+                    const whyCDSList = [
+                        {
+                            head: 'End-to-End Oversight',
+                            text: 'A single, integrated framework spanning loss mitigation, litigation,  title, claims, and bankruptcy — eliminating fragmented vendor  relationships and communication gaps.'
+                        },
+                        {
+                            head: 'Performance-Driven Accountability',
+                            text: 'Attorney and vendor scorecarding tied to SLAs, aging, compliance, and  billing accuracy. Real-time visibility with detailed scorecards and  exception-based reporting.'
+                        },
+                        {
+                            head: 'Risk & Compliance Focus',
+                            text: 'Proactive monitoring and regulatory-ready reporting aligned with OCC,  CFPB, and GSE servicing expectations. Built-in compliance checks at  every stage reducing risk exposure and audit findings.'
+                        },
+                        {
+                            head: 'Operational Expertise at Scale',
+                            text: 'National footprint, system-level expertise, and proven processes across  high-volume portfolios. Flexible capacity without compromising quality  or turnaround times.'
+                        },
+                        {
+                            head: 'Flexible Engagement Models',
+                            text: 'Full-portfolio oversight or individual service lines — our  component-based model lets you scale oversight up or down as your  portfolio and priorities evolve.'
+                        },
+                        {
+                            head: 'Industry Expertise',
+                            text: 'Deep mortgage default experience with leadership that has managed  oversight programs for the nation\'s largest servicers, law firms, and  default management companies.'
+                        }
+                    ]
+
+                each meta in whyCDSList
+                    -
+                        const iconSlug = meta.head
+                            .toLowerCase()
+                            .trim()
+                            .replace(/&/g, 'and')
+                            .replace(/[^a-z0-9\s-]/g, '')
+                            .replace(/\s+/g, '-')
+
+                    .col-md-6.mt-40
+                        .box.p-4
+                            .head.d-flex.align-items-center.mb-3
+                                span.icon 
+                                    +imgTag(`icon-${iconSlug}`, {ext:'svg'})
+                                h2.text-uppercase.pt-2.mb-0= meta.head
+                            p= meta.text
+
+    +hording('Ready to Strengthen Your Default Operations?', 'Let\'s discuss how CDS can reduce your risk, improve compliance, and deliver measurable results.', 'CONTACT US TODAY')
