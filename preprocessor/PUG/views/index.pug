@@ -76,63 +76,63 @@ block content
                     }
                 ]
 
-            .row 
+            .row
                 each box, index in challengeBox
-                    .col-md-4.bod-start.mt-5 
-                        .box.mx-auto 
+                    .col-md-4.bod-start.mt-5
+                        .box.mx-auto
                             .head.d-flex.align-items-center.mb-3
                                 .h2.num.mb-0.me-2.pt-2= `${String(index + 1).padStart(2, '0')}`
                                 h2.text-uppercase.mb-0= box.head
-                            .text 
-                                p= box.text 
+                            .text
+                                p= box.text
 
             .note.text-center.mt-5
                 p That's exactly what CDS was built to solve.
 
-    section.sec-my.what-we-do 
+    section.sec-my.what-we-do
         .img-bg
             +imgTag('what-we-do-bg')
-        .container.container1024 
+        .container.container1024
             +headSec('What we do', 'Full-Spectrum Default Oversight', 'Eight integrated service lines covering the full default lifecycle —  available as a complete portfolio solution or individual engagements tailored to your most pressing needs.')
             -
                 const whatWeDo = [
                     {
-                        head: 'Foreclosure Oversight',                        
+                        head: 'Foreclosure Oversight',
                         icon: true,
                         text: 'Cradle-to-grave litigation monitoring with attorney performance scorecarding, driving efficiency, compliance, and predictable outcomes across your entire attorney matrix.'
                     },
                     {
-                        head: 'Bankruptcy Oversight',                        
+                        head: 'Bankruptcy Oversight',
                         icon: null,
                         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
                     },
                     {
-                        head: 'Litigation Oversight',                        
+                        head: 'Litigation Oversight',
                         icon: null,
                         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
                     },
                     {
-                        head: 'Eviction Oversight',                        
+                        head: 'Eviction Oversight',
                         icon: null,
                         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
                     },
                     {
-                        head: 'Title Curative',                        
+                        head: 'Title Curative',
                         icon: null,
                         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
                     },
                     {
-                        head: 'Claims Oversight',                        
+                        head: 'Claims Oversight',
                         icon: null,
                         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
                     },
                     {
-                        head: 'Loss Mitigation',                        
+                        head: 'Loss Mitigation',
                         icon: null,
                         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
                     },
                     {
-                        head: 'FTE Staffing & Capacity',                        
+                        head: 'FTE Staffing & Capacity',
                         icon: null,
                         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
                     }
@@ -150,9 +150,9 @@ block content
                                     .replace(/[^a-z0-9\s-]/g, '')
                                     .replace(/\s+/g, '-')
 
-                            span.service-name.py-3(data-service=serviceSlug, class=(index === 0 ? 'active' : '')) 
+                            span.service-name.py-3(data-service=serviceSlug, class=(index === 0 ? 'active' : ''))
                                 .inner.d-flex.align-items-center.py-1
-                                    span.num.pt-1= String(index + 1).padStart(2, '0') 
+                                    span.num.pt-1= String(index + 1).padStart(2, '0')
                                     span.name.text-uppercase= item.head
 
                 .col-md.ps-md-5
@@ -255,7 +255,7 @@ block content
                     .col-md-6.mt-40
                         .box.p-4
                             .head.d-flex.align-items-center.mb-3
-                                span.icon 
+                                span.icon
                                     +imgTag(`icon-${iconSlug}`, {ext:'svg'})
                                 h2.text-uppercase.pt-2.mb-0= meta.head
                             p= meta.text
