@@ -9,21 +9,22 @@ mixin hero(h2, options = {})
             ext = 'svg',
             width,
             height,
-            text = null
+            text = null,
+            note = null
         } = options
 
         const heroPic = slugify(pic || mainPage)
-        const pageName = h1 || mainPage
+        const pageName = h1 || pageAlias || mainPage
+        const containerClass = alignment === 'right'
+            ? 'd-flex justify-content-md-end'
+            : ''
 
-    section.hero.shadow(class=pageSelectors)
-        .hero__bg-img
-            +imgTag(`hero-${heroPic}`, {className: 'w-100'})
-
-        .hero__container(class=alignment === 'right' ? `d-flex justify-content-md-end` : '')
+    mixin heroContent()
+        .hero__container(class=containerClass)
             .hero__wrap
                 if logo
                     .logo
-                        +imgTag(logo, {ext, width, height})
+                        +imgTag(logo, { ext, width, height })
 
                 .copy
                     h1.text-uppercase.mb-4= pageName
@@ -33,3 +34,26 @@ mixin hero(h2, options = {})
 
                     if text
                         p= text
+
+    section.hero.shadow(
+        class=pageSelectors
+        class=note ? 'hero--has-note' : ''
+    )
+        if note
+            .hero__banner
+                .hero__bg-img
+                    +imgTag(`hero-${heroPic}`, { className: 'w-100' })
+
+                +heroContent()
+
+            .hero__note.bg-white.py-3
+                .copy.d-flex.align-items-center.justify-content-center
+                    .icon.me-3
+                    .text
+                        p!= note
+
+        else
+            .hero__bg-img
+                +imgTag(`hero-${heroPic}`, { className: 'w-100' })
+
+            +heroContent()

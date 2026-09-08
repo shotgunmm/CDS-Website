@@ -1,0 +1,184 @@
+extends ../layouts/layout.pug
+
+block vars
+    - mainPage = 'Services';
+    - pageAlias = 'Our Services';
+
+block content
+    +hero(
+        'Cradle-to-Grave Default<br /> Services Management',
+        {
+            text: 'Eight integrated service lines providing comprehensive oversight of your entire default portfolio — from first legal action through final  resolution.',
+            note: '<strong>Flexible engagement:</strong> Engage CDS for full-portfolio oversight or select individual service lines to address your most pressing needs.'
+        }
+    )
+
+    section.sec.approaches
+        .container-fluid.wide.ps-0
+            .row.ms-0
+                .col-md-auto.px-0
+                    .lifecycle-wrap.d-flex.flex-column.justify-content-center
+                        h2.text-uppercase Our Oversight Lifecycle
+                        .column-text.d-flex.flex-column
+                            .icon.item
+                                i.bi.bi-arrow-down
+                            each text in ['Referral', 'Assignment', 'Oversight']
+                                span.item= text
+                        .column-text.d-flex.flex-column
+                            .icon.item
+                                i.bi.bi-arrow-down
+                            each text in ['Milestone Tracking', 'Exception Mgmt']
+                                span.item= text
+                        .column-text.d-flex.flex-column
+                            .icon.item
+                                i.bi.bi-arrow-down
+                            each text in ['Resolution', 'Reporting']
+                                span.item= text
+                .col-md.ps-5
+                    .wrap
+                        .heading
+                            h2.text-uppercase our approach
+                            h3 Oversight That Drives Outcomes
+                        p Most servicers work with dozens of law firms and vendors across multiple  states — each with different processes, timelines, and reporting  standards. CDS sits between you and your vendor network, providing a  consistent oversight layer that ensures every file is moving, every  deadline is met, and every exception is caught early.
+                        p We don't replace your existing vendors — we make them perform better. Our team monitors milestones, flags delays, enforces SLAs, and delivers the  reporting you need to stay compliant and in control.
+
+                        -
+                            const approachesList = [
+                                {
+                                    head: 'Assign & Onboard',
+                                    text: 'Every referral is matched to the right vendor and tracked from day one.  Files are graded based on type and impediments, with SLAs assigned to  each grade.'
+                                },
+                                {
+                                    head: 'Monitor & Manage',
+                                    text: 'Standardized 15- and 30-day follow-ups with counsel and vendors increase resolution velocity and ensure SLA adherence.'
+                                },
+                                {
+                                    head: 'Report & Optimize',
+                                    text: 'Monthly centralized reporting with file grades, aging, attorney  performance scorecards, and structured opportunity for firm rebuttals.'
+                                }
+                            ]
+                        .approach-wrap.mt-5
+                            each approach, index in approachesList
+                                .approach-row
+                                    .row.align-items-center.py-4
+                                        .col-lg-5.col-xl-4.col-xxl-3
+                                            .head.d-flex.align-items-center
+                                                h2.p.text-uppercase.d-flex.align-items-center.mb-0
+                                                    span.num.h2.mb-0.mt-1= `${String(index + 1).padStart(2, '0')}`
+                                                    span.text= approach.head
+                                        .col-lg
+                                            p= approach.text
+
+    section.our-help
+        -
+            const helps = [
+                {
+                    title: 'Foreclosure Oversight',
+                    text: 'Fully customizable oversight aligned with each client\'s operational,  compliance, and risk-mitigation objectives. Cradle-to-grave litigation  monitoring with attorney performance scorecarding.',
+                    list: [
+                        'Attorney matrix oversight with performance scorecarding',
+                        'Contested and uncontested foreclosure timeline management',
+                        'RESPA issues, TROs, and invalid foreclosure claims oversight',
+                        'Billing oversight with milestone validation and AP verification',
+                        'Witness coordination for court and mediation proceedings'
+                    ]
+                },
+                {
+                    title: 'Bankruptcy Oversight',
+                    text: 'A seamless national solution supported by experienced attorneys and  paralegals managing bankruptcy matters across entire loan portfolios —  including credit card, automobile, and mortgage assets.',
+                    list: [
+                        'Nationwide coverage across all 94 U.S. Bankruptcy Courts',
+                        'Proofs of Claim management and compliance review',
+                        'Motions for Relief monitoring and execution',
+                        'Continuous collection of national and local bankruptcy rules',
+                        'Objection monitoring and adversary proceeding oversight'
+                    ]
+                },
+                {
+                    title: 'Litigation Oversight',
+                    text: 'Management and tracking of contested litigation matters with milestone monitoring, discovery oversight, and vendor accountability across the full  litigation lifecycle.',
+                    list: [
+                        'Discovery interrogatory review and documentation support',
+                        'Litigation fee reviews and compliance tracking',
+                        'Escalation management and impediment resolution'
+                    ]
+                },
+                {
+                    title: 'Eviction Oversight',
+                    text: 'Coordination of post-foreclosure eviction proceedings to ensure timely property possession and compliance.',
+                    list: [
+                        'Post-sale eviction timeline management',
+                        'Vendor coordination and compliance tracking',
+                        'Cash-for-keys program oversight'
+                    ]
+                },
+                {
+                    title: 'Title Curative',
+                    text: 'Cradle-to-grave monitoring of title issues spanning senior lien clearance, repurchases, mobile home resolution, legal description defects, origination issues, and title claims.',
+                    list: [
+                        'Issue identification through foreclosure counsel notification',
+                        'Review, validation, and grading of title issues',
+                        'Curative strategy based on risk, complexity, and jurisdiction',
+                        'Active monitoring against historical curative timelines',
+                        'Resolution, clearance, and file progression'
+                    ]
+                },
+                {
+                    title: 'Claims Oversight',
+                    text: 'End-to-end visibility, compliance, and control across the claims lifecycle covering FHA, FNMA, FHLMC, MI, VA, USDA, and eviction-related claims.',
+                    list: [
+                        'Claims deadline monitoring and compliance tracking',
+                        'FHA Part A & B, FNMA 571, MI claims, and rebuttals',
+                        'Initial, final, and supplemental claims filing status',
+                        'Loss analysis and post-mortem reviews',
+                        'Claims performance analytics and custom reporting'
+                    ]
+                },
+                {
+                    title: 'Loss Mitigation',
+                    text: 'Comprehensive oversight of loss mitigation strategies aligned with client objectives and borrower outcomes, spanning both retention and resolution approaches.',
+                    list: [
+                        'Borrower-retention: mediation and loan modifications',
+                        'Resolution-driven: short sales, deeds in lieu, cash-for-keys',
+                        'Data-driven strategy support for client initiatives'
+                    ]
+                },
+                {
+                    title: 'FTE Staffing & Capacity Management',
+                    text: 'Full-Time Equivalent analysis to establish baseline staffing requirements through structured evaluation of work activities, time allocations, and cost drivers.',
+                    list: [
+                        'Resource requirements and labor hour analysis',
+                        'Workload allocation and balancing across teams',
+                        'Organizational and individual performance metrics',
+                        'Generalist vs. specialist role design',
+                        'Virtual shared services and expert center structures'
+                    ]
+                }
+            ]
+        .our-help__head.shadow.text-center
+            .container-fluid.wide
+                h2.text-uppercase how can we help?
+                .our-help__list.d-flex.justify-content-center
+
+                    each help, index in helps
+                        a(href=`#${slugify(help.title)}`)= help.title
+
+                        if index !== helps.length - 1
+                            span.bar |
+        .our-help__content
+            .container-fluid.wide
+                each help in helps
+                    .row.row-help-detail(id=slugify(help.title))
+                        .col-md-4
+                            .head.d-flex.align-items-center
+                                .icon.d-flex.align-items-center.justify-content-center
+                                    +imgTag(`icon-${slugify(help.title)}`, {ext: 'svg'})
+                                h2.mb-0.mt-1= help.title
+                        .col-md
+                            .text
+                                p= help.text
+                                ul
+                                    each li in help.list
+                                        li= li
+
+    +hording('Need a Customized Oversight Solution?', 'Every servicer\'s default portfolio is different. Let\'s discuss your specific needs.', 'request a consultation')

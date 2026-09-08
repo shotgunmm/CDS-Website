@@ -1,0 +1,52 @@
+@use 'mixins' as *;
+
+.our-help {
+	&__head {
+		background: #f6f6f6;
+		padding-block: 1.25rem;
+
+		h2 {
+			color: $teal;
+			font: 700 16px/1.5 $int;
+		}
+	}
+
+	&__list {
+		gap: 0.5rem;
+
+		.bar {
+			color: $orange;
+		}
+
+		a {
+			color: #3f3f3f;
+		}
+	}
+
+	.row-help-detail {
+		padding-block: 2.5rem;
+
+		.head {
+			.icon {
+				flex: 0 0 44px;
+				height: 44px;
+				margin-right: 1.25rem;
+				width: 44px;
+
+				img {
+					max-height: 100%;
+					max-width: 100%;
+				}
+			}
+
+			h2 {
+				color: $orange;
+				font-size: 28px;
+			}
+		}
+
+		&:nth-child(even) {
+			background: #fdfbf9;
+		}
+	}
+}

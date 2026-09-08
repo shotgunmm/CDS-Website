@@ -1,13 +1,14 @@
 - let siteName = 'Consolidated Default Services, LLC';
-- let mainPage = false;
-- let parentPage = false;
-- let currentPage = false;
-- let childCurrentPage = false;
-- let pageAlias = false;
+- let mainPage = null;
+//- - let parentPage = null;
+//- - let currentPage = null;
+//- - let childCurrentPage = null;
+- let pageAlias = null;
 
 block vars
 
-- let titleParts = [childCurrentPage, currentPage || pageAlias, parentPage, mainPage, siteName].filter(Boolean);
+//- - let titleParts = [childCurrentPage, currentPage || pageAlias, parentPage, mainPage, siteName].filter(Boolean);
+- let titleParts = [pageAlias || currentPage || mainPage, siteName].filter(Boolean);
 - let pageTitle = titleParts.join(' | ');
 
 include ../partials/head.pug
