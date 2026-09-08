@@ -1,0 +1,97 @@
+extends ../layouts/layout.pug
+
+block vars
+    - mainPage = 'About Us';
+
+block content
+    +hero(
+        'Built on Oversight.<br> Driven by Results.',
+        {
+            text: 'Since 2010, Consolidated Default Services has been the trusted oversight partner for mortgage servicers and financial institutions managing complex default portfolios.'
+        }
+    )
+
+    section.sec.img-copy.bg-white
+        .container-fluid.wide
+            .row
+                .col-md-auto
+                    +imgTag('logo-about', {ext: 'jpg', className: 'img-fluid'})
+                .col-md
+                    h2 Our Story
+                    h3 CDS was founded in 2010 with a straightforward premise: mortgage servicers needed more than a referral network. They needed someone to manage what happened after the referral — to make sure files moved, deadlines were met, and vendors were held accountable across dozens of jurisdictions simultaneously.
+                    p We built that capability through direct dialogue with our clients. The  problems they described weren't unique to one servicer; they were  systemic. Fragmented vendor networks. Inconsistent timelines. Compliance gaps that only surfaced at audit. No single point of accountability. We heard it repeatedly, and we built the answer.
+                    p The result was a formal oversight framework spanning foreclosure,  bankruptcy, litigation, loss mitigation, title, and claims — the  foundation of what CDS does today. What began as a support function has  grown into a full-spectrum oversight practice trusted by some of the  nation's largest servicers and portfolio managers.
+
+    section.sec.our-mission
+        .img-bg
+            +imgTag('our-mission-bg', {className: 'w-100'})
+        .container-fluid.wide
+            .row
+                .col-md-6
+                    h2 Our Mission
+                    p To provide comprehensive, transparent, and accountable oversight of  mortgage default services — reducing operational burden, mitigating  risk, and enabling our clients to focus on strategic priorities while we ensure execution, compliance, and performance across their portfolios.
+                .col-md-6
+                    .saying
+                        p "The servicers we work with are managing enormous complexity across dozens of vendors and jurisdictions. Our job is to make that invisible to them — to ensure every file is moving, every deadline is met, and every exception is caught before it becomes a problem."
+                        p.name — CDS Leadership
+
+    section.sec-my.approach
+        .container.container1280
+            +headSec('What Sets Us Apart', 'Our Approach to Oversight')
+            -
+                const challengeBox = [
+                    {
+                        head: 'Fragmented Vendor Networks',
+                        text: 'Multiple law firms and vendors across jurisdictions with inconsistent  processes, timelines, and reporting — creating blind spots.'
+                    },
+                    {
+                        head: 'An Unforgiving Compliance Environment',
+                        text: 'OCC consent orders, CFPB enforcement actions, and GSE servicing mandates demand documentation and oversight that most servicers struggle to  maintain internally.'
+                    },
+                    {
+                        head: 'Cost of Internal Build-Out',
+                        text: 'Standing up an in-house oversight function requires dedicated staff,  technology, and institutional knowledge that takes years to develop.'
+                    }
+                ]
+
+            .row
+                each box, index in challengeBox
+                    .col-md-4.bod-start.mt-5
+                        .box.mx-auto
+                            .head.d-flex.align-items-center.mb-3
+                                .h2.num.mb-0.me-2.pt-2= `${String(index + 1).padStart(2, '0')}`
+                                h2.text-uppercase.mb-0= box.head
+                            .text
+                                p= box.text
+
+    section.our-team
+        .container(style="max-width:780px")
+            +headSec('Leadership', 'Our Team', 'Experienced professionals with deep roots in mortgage default services.')
+
+            .row
+                -
+                    const teamMembers = [
+                        {
+                            name: 'Gary Marinosci'
+                        },
+                        {
+                            name: 'Jennifer VonFlatern',
+                            role: 'Executive Vice President'
+                        },
+                        {
+                            name: 'Israel Solano'
+                        },
+                        {
+                            name: 'Daniel Lailer'
+                        }
+                    ]
+
+                each member in teamMembers
+                    .col-md-6.mt-5
+                        .member.d-flex.align-items-center
+                            .pic.me-3
+                            .copy
+                                h2.mb-0= member.name
+                                p= member.role || 'Title TBD'
+
+    +hording('Want to Learn More?', 'We\'d love to talk about how CDS can support your default operations.', 'Get in Touch')

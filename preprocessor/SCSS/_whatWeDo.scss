@@ -1,21 +1,13 @@
 @use 'mixins' as *;
 
 .what-we-do {
-	isolation: isolate;
+	background: #fdfbf9;
 	padding-block: 3rem;
-	position: relative;
+
+	@include imgCoverBg();
 
 	.bod-end {
 		border-right: 1px solid $teal;
-	}
-
-	.img-bg {
-		@include absolute-fill;
-		z-index: -1;
-
-		img {
-			@include imgFit;
-		}
 	}
 
 	.services {

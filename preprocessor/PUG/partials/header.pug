@@ -5,17 +5,24 @@ mixin navItem(item, level = 0)
         const hasChildren = item.sub && item.sub.length
         const isDeep = level > 0
         const liClass = hasChildren ? (isDeep ? 'has-sub-more' : 'has-sub') : null
+
         const isMain = item.label === mainPage
         const isParent = item.label === parentPage
         const isCurrent = item.label === currentPage
         const aClass = (isMain || isParent || isCurrent) ? 'active' : null
+
         const slug = slugify(item.label)
-        const href = item.href ? item.href : item.link === true ? `${slug}.html` : '#'
+        const href = item.href
+            ? item.href
+            : item.link === true
+                ? (item.home === true ? '/' : `${slug}.html`)
+                : '#'
 
     li(class=liClass)
         if item.link === true || item.href
             a(href=href, class=aClass)
                 = item.label
+
                 if item.status === 'sliced' || item.status === 'slicing'
                     span.icon-status.ms-2.text-danger
                         if item.status === 'sliced'
@@ -25,6 +32,7 @@ mixin navItem(item, level = 0)
         else
             span.anchor(class=aClass)
                 = item.label
+
                 if item.status === 'sliced' || item.status === 'slicing'
                     span.icon-status.ms-2.text-danger
                         if item.status === 'sliced'
@@ -50,28 +58,17 @@ mixin navItem(item, level = 0)
         {
             label: 'Home',
             link: true,
+            home: true,
+            status: 'sliced'
+        },
+        {
+            label: 'About Us',
+            link: true,
             status: 'slicing'
         },
-        { label: 'About Us' },
         { label: 'Services' },
-        { label: 'Contact' },
-        //- {
-        //-     label: 'Products',
-        //-     sub: [
-        //-         { label: 'Lorem', link: false },
-        //-         { label: 'Ipsum', link: false }
-        //-     ]
-        //- },
-        //- {
-        //-     label: 'News & Events',
-        //-     sub: [
-        //-         { label: 'Lorem', link: false },
-        //-         { label: 'Ipsum', link: false }
-        //-     ]
-        //- },
-        //- { label: 'Contact', link: false }
+        { label: 'Contact' }
     ]
-
 
 mixin header
     header#header.header(role='header')

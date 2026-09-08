@@ -1,14 +1,18 @@
 @use 'mixins' as *;
+@use 'common';
 @use 'header';
 @use 'hero';
 @use 'cdsMeta';
+@use 'imgCopy';
 @use 'challenges';
+@use 'approach';
 @use 'whatWeDo';
 @use 'trackRecords';
 @use 'whyCDS';
 @use 'hording';
+@use 'ourMission';
+@use 'ourTeam';
 @use 'footer';
-@use 'common';
 @use 'scrollTop';
 @use 'typography';
 

@@ -1,0 +1,17 @@
+@use 'mixins' as *;
+
+.our-mission {
+	@include imgCoverBg();
+	padding-block: 3rem;
+
+	.saying {
+		p {
+			color: #787878;
+			font: italic 500 20px/1.5 $jos;
+		}
+
+		.name {
+			font-style: normal;
+		}
+	}
+}

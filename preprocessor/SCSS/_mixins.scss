@@ -123,3 +123,34 @@
 		transform: translateY($y);
 	}
 }
+
+@mixin imgCoverBg() {
+	isolation: isolate;
+	position: relative;
+
+	.img-bg {
+		@include absolute-fill;
+		z-index: -1;
+
+		img {
+			@include imgFit;
+		}
+	}
+}
+
+@mixin metaBoxes($color: $teal) {
+	.box {
+		max-width: 360px;
+		padding: 1rem 1.25rem;
+
+		h2 {
+			color: $color;
+			font: 600 16px $int;
+			letter-spacing: 1px;
+		}
+
+		.num {
+			color: $color;
+		}
+	}
+}

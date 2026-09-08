@@ -1,0 +1,14 @@
+@use 'mixins' as *;
+
+.approach {
+	@include metaBoxes($orange);
+	background: #fdfbf9;
+	border-block: 3px solid #ff743e;
+	padding-block: 3rem;
+
+	.bod-start {
+		+ .bod-start {
+			border-left: 1px solid $orange;
+		}
+	}
+}

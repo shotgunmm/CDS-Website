@@ -8,7 +8,8 @@ mixin hero(h2, options = {})
             logo,
             ext = 'svg',
             width,
-            height
+            height,
+            text = null
         } = options
 
         const heroPic = slugify(pic || mainPage)
@@ -29,3 +30,6 @@ mixin hero(h2, options = {})
 
                     if h2
                         h2!= h2
+
+                    if text
+                        p= text

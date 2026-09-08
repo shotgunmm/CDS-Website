@@ -111,7 +111,7 @@ a,
 .container1280 {
 	max-width: 1024px;
 
-	@include xxl {
+	@include xl {
 		max-width: 1254px;
 	}
 }
@@ -150,30 +150,5 @@ a,
 
 	iframe {
 		@include absolute-fill;
-	}
-}
-
-.img-copy {
-	border-bottom: 3px solid $orange;
-
-	@include md {
-		padding-block: 4rem;
-	}
-
-	h2 {
-		color: $orange;
-		font: 500 22px/1.5 $int;
-	}
-
-	p {
-		font: 18px/1.5 $int;
-	}
-
-	.cta {
-		font: 600 16px $int;
-
-		+ .cta {
-			margin-left: 2rem;
-		}
 	}
 }

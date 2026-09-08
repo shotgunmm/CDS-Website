@@ -5,7 +5,7 @@ mixin footer()
     - companyLinks = ['About Us', 'Services', 'Contact']
 
     mixin linksCall(head, links)
-        .col-md-4.mb-4
+        .col-md-auto.mb-4
             .links
                 h2.text-uppercase.mb-0= head
                 ul.link.nav.flex-column
@@ -15,21 +15,20 @@ mixin footer()
 
     footer.footer(role="contentinfo")
         .container-fluid.wide
-            .row
-                .col-md-6.mb-4
+            .row.justify-content-between
+                .col-md-auto.mb-4
                     .meta-footer(style="max-width:360px")
                         .logo.mb-4
                             +imgTag('logo-footer', {ext:'svg'})
                         .meta
                             p Trusted oversight partner providing cradle-to-grave default services management for mortgage servicers and financial institutions nationwide.
-                .col-md-6
-                    .row
-                        +linksCall('Services', servicesLinks)
-                        +linksCall('company', companyLinks)
-                        .col-md-4.mb-4
-                            .links
-                                h2.text-uppercase.mb-0 contact
-                                p info@cds-default.com#[br] 972.331.2320#[br] www.CDS-Default.com
+
+                +linksCall('Services', servicesLinks)
+                +linksCall('company', companyLinks)
+                .col-md-auto.mb-4
+                    .links
+                        h2.text-uppercase.mb-0 contact
+                        p info@cds-default.com#[br] 972.331.2320#[br] www.CDS-Default.com
             hr
 
             .row.justify-content-between.py-4

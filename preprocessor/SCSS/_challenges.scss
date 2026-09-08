@@ -1,15 +1,7 @@
 @use 'mixins' as *;
 
 .challenges {
-	.box {
-		max-width: 360px;
-		padding: 1rem 1.25rem;
-
-		h2 {
-			font: 600 16px $int;
-			letter-spacing: 1px;
-		}
-	}
+	@include metaBoxes();
 
 	.note {
 		p {

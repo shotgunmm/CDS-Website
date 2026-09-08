@@ -1,0 +1,21 @@
+@use 'mixins' as *;
+
+.our-team {
+	.member {
+		.pic {
+			background: #d9d9d9;
+			width: 96px;
+			flex: 0 0 96px;
+			height: 96px;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+		h2 {
+			font-size: 24px;
+			color: $dark;
+		}
+		p {
+			font-size: 14px;
+		}
+	}
+}

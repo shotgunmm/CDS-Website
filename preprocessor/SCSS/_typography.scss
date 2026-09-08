@@ -8,8 +8,9 @@ h2,
 
 p,
 .p {
-	color: #000;
+	color: $dark;
 	font: 16px/1.5 $int;
+	letter-spacing: 1px;
 }
 
 p {
