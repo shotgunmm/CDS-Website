@@ -1,0 +1,39 @@
+@use 'mixins' as *;
+
+.contact {
+	h2 {
+		color: $orange;
+	}
+
+	.form-control {
+		background: #f6f6f6;
+		border: 0 none;
+		border-radius: 0.5rem;
+		font: 16px $int;
+		height: 44px;
+
+		&::placeholder {
+			color: #787878;
+			opacity: 1;
+		}
+	}
+
+	textarea {
+		min-height: 180px;
+	}
+
+	.cta {
+		font-size: 18px;
+	}
+
+	.contact-meta {
+		strong {
+			color: $orange;
+		}
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+}

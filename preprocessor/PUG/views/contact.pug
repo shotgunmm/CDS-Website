@@ -1,0 +1,37 @@
+extends ../layouts/layout.pug
+
+block vars
+    - mainPage = 'Contact';
+    - pageAlias = 'Contact Us';
+
+block content
+    +hero(
+        'Let’s Start a Conversation',
+        {
+            text: 'Whether you\'re exploring oversight solutions or ready to get started, we\'re here to help.'
+        }
+    )
+
+    section.sec.contact
+        .container.container1280
+            .row.gx-md-5
+                .col-md-8
+                    .contact__form
+                        h2.mb-4 Send us a Message
+                        form.form(action="")
+                        //- h2.mb-4 Quick Contact
+                        .row
+                            +field('First Name*', 'text', '6')
+                            +field('Last Name*', 'text', '6')
+                            +field('Company', 'text')
+                            +field('Email Address', 'email')
+                            +field('Phone (Optional)', 'tel')
+                            +message('Tell us about your oversight needs.', 'Message', 12)
+                            .cta-row.mt-3
+                                button.cta.orange.border-0 submit inquiry
+                .col-md-4
+                    .contact-meta
+                        h2 Get in Touch
+                        p #[strong Email: #[a(href="mailto:info@cds-default.com") info@cds-default.com]]#[br] We respond within one business day
+                        p #[strong Phone: #[a(href="tel:972.331.2320") 972.331.2320]]
+                        p #[strong Web: #[a(href="https://www.CDS-Default.com", target="_blank") www.CDS-Default.com]]

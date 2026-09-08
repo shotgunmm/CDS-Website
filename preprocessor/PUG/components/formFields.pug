@@ -1,0 +1,51 @@
+
+mixin field(label, type, col, num='4', visible = true, required = null)
+    - let labelText = label.replace(/<[^>]*>/g, '').trim().replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) => index === 0 ? match.toLowerCase() : match.toUpperCase()).replace(/\s+/g, '');
+    div(class=[`col-md-${col}`, `mb-${num}`])
+        label.form-label(class=(visible) ? 'visually-hidden' : undefined, for=labelText) !{label}
+        if required
+            span.star *
+        if type === 'tel'
+            input.form-control.rounded-0(id=labelText, type="tel", placeholder=(visible) ? label : undefined, pattern="^\d{3}-\d{3}-\d{4}$")
+        else
+            input.form-control.rounded-0(id=labelText, type=type, placeholder=(visible) ? label : undefined)
+
+mixin fieldLabel(label, type, col, num='4')
+    - let camelCaseLabel = label.replace(/\s(.)/g, function(match, group1) { return group1.toUpperCase(); }).replace(/\s/g, '').replace(/^(.)/, function(match, group1) { return group1.toLowerCase(); })
+    div.position-relative(class=[`col-md-${col}`, `mb-${num}`])
+        label.form-label.visually-hidden(for=`${camelCaseLabel}`)= label
+        input.form-control.rounded-0(id=`${camelCaseLabel}`, type=`${type}`)
+        span.place.p !{label}#[span.red-text *]
+
+mixin message(label, text, col, num='4', visible = true)
+    div(class=[`col-md-${col}`, `mb-${num}`])
+        label.form-label(class=(visible) ? 'visually-hidden' : undefined, for=`${label.split(' ')[0].toLowerCase()}`) !{text}#[span.red-text *]
+        textarea.form-control.rounded-0(id=`${label.split(' ')[0].toLowerCase()}`, placeholder=label, row="3")
+
+mixin select(label, id, inputs, col, num='4')
+    div(class=[`col-md-${col}`, `mb-${num}`])
+        .select-arrow.position-relative
+            label.form-label(for=`${id}`)= label
+            select.form-control.rounded-0(id=`${id}`)
+                each val in inputs
+                    option(value=`${val.replaceAll(' ','-').toLowerCase()}`)= val
+            span.arrow #[i.bi.bi-chevron-down]
+
+mixin checkBox(label, text, col, num='4')
+    div(class=[`col-md-${col}`, `mb-${num}`])
+        .form-check
+            input.form-check-input(id=label, type="checkbox", value=label)
+            label.form-check-label.p(for=label) !{text}
+
+
+
+mixin fieldPlace(label, type, col, num='4', required = null)
+    - let labelText = label.replace(/<[^>]*>/g, '').trim().replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) => index === 0 ? match.toLowerCase() : match.toUpperCase()).replace(/\s+/g, '');
+    div(class=[`col-md-${col}`, `mb-${num}`])
+        label.form-label(class=(visible) ? 'visually-hidden' : undefined, for=labelText) !{label}
+            if required
+                span.star *
+        if type === 'tel'
+            input.form-control.rounded-0(id=labelText, type="tel", placeholder=label, pattern="^\d{3}-\d{3}-\d{4}$")
+        else
+            input.form-control.rounded-0(id=labelText, type=type, placeholder=label)

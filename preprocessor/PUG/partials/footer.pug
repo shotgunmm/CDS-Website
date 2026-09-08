@@ -28,7 +28,7 @@ mixin footer()
                 .col-md-auto.mb-4
                     .links
                         h2.text-uppercase.mb-0 contact
-                        p info@cds-default.com#[br] 972.331.2320#[br] www.CDS-Default.com
+                        p #[a(href="mailto:info@cds-default.com") info@cds-default.com]#[br] #[a(href="tel:972.331.2320") 972.331.2320]#[br] #[a(href="https://www.CDS-Default.com", target="_blank") www.CDS-Default.com]
             hr
 
             .row.justify-content-between.py-4
@@ -46,9 +46,7 @@ mixin footer()
                 path(fill-rule="evenodd", d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5")
 
     script(src="js/app.js")
-    script(src="js/navToggle.js")
     script(src="js/scrollTop.js")
-    script(src="js/localLink.js")
     if block
         block
     //- script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js", integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r", crossorigin="anonymous")
