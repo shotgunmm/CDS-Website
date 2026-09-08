@@ -1,6 +1,8 @@
 @use 'mixins' as *;
 
 .contact {
+	padding-block: 5rem;
+
 	h2 {
 		color: $orange;
 	}
