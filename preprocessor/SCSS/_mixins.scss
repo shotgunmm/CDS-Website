@@ -142,11 +142,9 @@
 	.box {
 		padding-block: 1.5rem;
 
-		@include md {
+		@include lg {
 			max-width: 360px;
-		}
 
-		@include md {
 			padding: 1rem 1.25rem;
 		}
 

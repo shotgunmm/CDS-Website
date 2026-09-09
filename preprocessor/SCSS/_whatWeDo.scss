@@ -58,7 +58,7 @@
 		}
 
 		.service-wrap {
-			@include mob {
+			@include tab-mob {
 				border-bottom: 1px solid $teal;
 				padding-block: 1.25rem;
 
@@ -67,12 +67,12 @@
 				}
 			}
 
-			@include md {
+			@include lg {
 				display: none;
 			}
 
 			.service-text {
-				@include mob {
+				@include tab-mob {
 					display: flex;
 					max-height: 0;
 					opacity: 0;
@@ -88,7 +88,7 @@
 					height: 64px;
 					width: 64px;
 
-					@include md {
+					@include lg {
 						flex: 0 0 92px;
 						height: 92px;
 						width: 92px;
@@ -114,7 +114,7 @@
 			&.active {
 				display: block;
 
-				@include mob {
+				@include tab-mob {
 					.service-name {
 						.name {
 							color: #000;

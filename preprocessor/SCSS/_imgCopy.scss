@@ -16,7 +16,7 @@
 	.cta {
 		font: 600 16px $int;
 
-		@include md {
+		@include lg {
 			+ .cta {
 				margin-left: 2rem;
 			}

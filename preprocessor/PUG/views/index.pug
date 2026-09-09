@@ -53,7 +53,7 @@ block content
                     h2.h3 CDS is the dedicated oversight partner for mortgage servicers and investors managing default portfolios across the country. We bring every law firm, vendor, and jurisdiction working your portfolio under one standard of accountability, consistency, and visibility.
                     p We monitor every file, enforce every SLA, and hold every vendor accountable — so you stay compliant and in control without building the infrastructure to do it yourself.
                     p We don't replace your vendors. We make them perform.
-                    .cta-row.d-flex.flex-column.flex-md-row.mt-md-4.gap-4.gap-md-0
+                    .cta-row.d-flex.flex-column.flex-md-row.mt-md-4.gap-4.gap-lg-0
                         each cta in ['schedule a consultation', 'explore services']
                             +cta(cta, 'orange justify-content-center')
 
@@ -78,7 +78,7 @@ block content
 
             .row.mt-5
                 each box, index in challengeBox
-                    .col-md-4.bod-start
+                    .col-lg-4.bod-start
                         .box.mx-auto
                             .head.d-flex.align-items-center.mb-3
                                 .h2.num.mb-0.me-2.pt-2= `${String(index + 1).padStart(2, '0')}`
@@ -139,7 +139,7 @@ block content
                 ]
 
             #whatWeDo.services.row.mt-5
-                .col-md-4.d-none.d-md-block.bod-end.pe-5
+                .col-lg-4.d-none.d-lg-block.bod-end.pe-5
                     .d-flex.flex-column.list-do
                         each item, index in whatWeDo
                             -
@@ -155,7 +155,7 @@ block content
                                     span.num.pt-1= String(index + 1).padStart(2, '0')
                                     span.name.text-uppercase= item.head
 
-                .col-md.ps-md-5
+                .col-md.ps-lg-5
                     each item, index in whatWeDo
                         -
                             const serviceSlug = item.head
@@ -166,18 +166,18 @@ block content
                                 .replace(/\s+/g, '-')
 
                         .service-wrap(data-service=serviceSlug, class=(index === 0 ? 'active' : ''))
-                            .service-name.d-flex.align-items-center.d-md-none
+                            .service-name.d-flex.align-items-center.d-lg-none
                                 span.num.pt-1= String(index + 1).padStart(2, '0')
                                 span.name.text-uppercase= item.head
                                 span.ms-auto.service-chevron
                                     i.bi.bi-chevron-down
 
-                            .service-text.d-flex.flex-md-row.flex-column
+                            .service-text.d-flex.flex-lg-row.flex-column
                                 if item.icon
-                                    .icon.d-flex.align-items-center.justify-content-center.me-4.mt-4.mt-md-0
+                                    .icon.d-flex.align-items-center.justify-content-center.me-4.mt-4.mt-lg-0
                                         +imgTag(`icon-${serviceSlug}`, {ext: 'svg'})
 
-                                .copy.mt-4.mt-md-0
+                                .copy.mt-4.mt-lg-0
                                     .d-none.d-lg-block
                                         h2= item.head
 
@@ -214,7 +214,7 @@ block content
         .container-fluid.wide
             +headSec('why cds', 'The CDS Difference')
 
-            .row.gx-md-5
+            .row.gx-lg-5
                 -
                     const whyCDSList = [
                         {

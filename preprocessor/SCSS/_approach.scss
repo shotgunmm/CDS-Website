@@ -11,11 +11,11 @@
 	}
 
 	.bod-start {
-		@include mob {
+		@include tab-mob {
 			border-top: 1px solid $orange;
 		}
 
-		@include md {
+		@include lg {
 			+ .bod-start {
 				border-left: 1px solid $orange;
 			}

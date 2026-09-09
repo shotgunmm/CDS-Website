@@ -14,7 +14,7 @@ block content
     section.sec.img-copy.bg-white
         .container-fluid.wide
             .row
-                .col-md-auto.d-none.d-md-block
+                .col-md-3.col-lg-auto.d-none.d-md-block
                     +imgTag('logo-about', {ext: 'jpg', className: 'img-fluid'})
                 .col-md
                     h2 Our Story
@@ -58,7 +58,7 @@ block content
 
             .row
                 each box, index in challengeBox
-                    .col-md-4.bod-start.mt-4.mt-md-5
+                    .col-lg-4.bod-start.mt-4.mt-lg-5
                         .box.mx-auto
                             .head.d-flex.align-items-center.mb-3
                                 .h2.num.mb-0.me-2.pt-2= `${String(index + 1).padStart(2, '0')}`

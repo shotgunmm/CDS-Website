@@ -12,7 +12,7 @@
 	}
 
 	.bod-start {
-		@include mob {
+		@include tab-mob {
 			border-top: 1px solid $teal;
 
 			&:last-child {
@@ -20,7 +20,7 @@
 			}
 		}
 
-		@include md {
+		@include lg {
 			+ .bod-start {
 				border-left: 1px solid $teal;
 			}

@@ -5,7 +5,7 @@ mixin footer()
     - companyLinks = ['About Us', 'Services', 'Contact']
 
     mixin linksCall(head, links)
-        .col-md-auto.mb-5.mb-md-4
+        .col-md-4.col-lg-auto.mb-5.mb-md-4
             .links
                 h2.text-uppercase.mb-0= head
                 ul.link.nav.flex-column
@@ -16,8 +16,8 @@ mixin footer()
     footer.footer(role="contentinfo")
         .container-fluid.wide
             .row.justify-content-between
-                .col-md-auto.mb-5.mb-md-4
-                    .meta-footer(style="max-width:360px")
+                .col-lg-auto.mb-5.mb-lg-4
+                    .meta-footer
                         .logo.mb-4
                             +imgTag('logo-footer', {ext:'svg'})
                         .meta
@@ -31,10 +31,10 @@ mixin footer()
                         p #[a(href="mailto:info@cds-default.com") info@cds-default.com]#[br] #[a(href="tel:972.331.2320") 972.331.2320]#[br] #[a(href="https://www.CDS-Default.com", target="_blank") www.CDS-Default.com]
             hr
 
-            .row.justify-content-between.text-center.text-md-start.py-4
+            .row.justify-content-md-center.justify-content-lg-between.text-center.text-lg-start.py-4
                 .col-md-auto
                     p © 2026 Consolidated Default Services, LLC. All rights reserved.
-                .col-md-auto.link-terms.mt-4.mt-md-0
+                .col-md-auto.link-terms.mt-4.mt-lg-0
                     a(href="#") Privacy Policy
                     a(href="#") Terms of Service
 
