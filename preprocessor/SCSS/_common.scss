@@ -37,7 +37,12 @@ a,
 
 	h3 {
 		color: $orange;
-		font: 600 40px/1.5 $jos;
+		font-weight: 600;
+		line-height: 1.25;
+
+		@include md {
+			line-height: 1.5;
+		}
 	}
 
 	p {
@@ -102,9 +107,11 @@ a,
 	}
 }
 
-.container-fluid {
-	&.wide {
-		padding-inline: 5rem;
+@include xxl {
+	.container-fluid {
+		&.wide {
+			padding-inline: 5rem;
+		}
 	}
 }
 

@@ -82,11 +82,12 @@ mixin header
                     +imgTag('logo', {ext:'svg', height: '40', width: '230'})
 
             nav.nav_site.d-none.d-lg-flex.align-items-center#siteNav(aria-label="Navigation", role="navigation")
+                +cta('GET STARTED', 'brand', 'ms-lg-auto d-lg-none')
                 ul.nav
                     each item in menu
                         +navItem(item)
 
-            +cta('GET STARTED', 'brand', 'ms-lg-auto')
+            +cta('GET STARTED', 'brand', 'ms-lg-auto d-none d-lg-block')
 
             #navCall.call_nav.align-items-center.d-flex.flex-column.d-lg-none.justify-content-center.ms-auto(role="button", tabindex="0", aria-label="Toggle Navigation")
                 -for (i=0; i<3; i++)

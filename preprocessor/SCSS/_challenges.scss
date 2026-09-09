@@ -6,14 +6,24 @@
 	.note {
 		p {
 			color: $orange;
-			font-weight: 500;
 			font-size: 22px;
+			font-weight: 500;
 		}
 	}
 
 	.bod-start {
-		+ .bod-start {
-			border-left: 1px solid $teal;
+		@include mob {
+			border-top: 1px solid $teal;
+
+			&:last-child {
+				border-bottom: 1px solid $teal;
+			}
+		}
+
+		@include md {
+			+ .bod-start {
+				border-left: 1px solid $teal;
+			}
 		}
 	}
 }

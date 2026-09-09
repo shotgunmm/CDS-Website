@@ -30,7 +30,7 @@ mixin hero(h2, options = {})
                     h1.text-uppercase.mb-4= pageName
 
                     if h2
-                        h2!= h2
+                        h2(class=(!text ? 'mb-0' : ''))!= h2
 
                     if text
                         p= text

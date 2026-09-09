@@ -1,39 +1,47 @@
 @use 'mixins' as *;
 
 .hero:not(.hero--has-note) {
-	padding-inline: 8rem;
+	@include md {
+		padding-inline: 8rem;
+	}
 }
 
 .hero {
-	isolation: isolate;
-	position: relative;
+	@include md {
+		isolation: isolate;
+		position: relative;
 
-	&__banner {
-		padding-inline: 8rem;
-	}
-
-	&__bg-img {
-		@include absolute-fill;
-		z-index: -1;
-
-		img {
-			height: 100%;
-			object-fit: cover;
+		&__banner {
+			padding-inline: 8rem;
 		}
-	}
 
-	&--home {
-		.hero__wrap {
-			max-width: 615px;
-			min-height: 448px;
+		&__bg-img {
+			@include absolute-fill;
+			z-index: -1;
+
+			img {
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		&--home {
+			.hero__wrap {
+				max-width: 615px;
+				min-height: 448px;
+			}
 		}
 	}
 
 	&__wrap {
 		background: #fff;
 		max-width: 565px;
-		padding: 5rem 2rem 2.5rem;
+		padding: 3rem 1.5rem 2rem;
 		width: 100%;
+
+		@include md {
+			padding: 5rem 2rem 2.5rem;
+		}
 	}
 
 	&__note {
@@ -51,6 +59,13 @@
 
 	.logo {
 		margin-bottom: 2rem;
+
+		@include mob {
+			img {
+				height: auto;
+				width: 160px;
+			}
+		}
 	}
 
 	h1 {
@@ -60,6 +75,7 @@
 
 	h2 {
 		color: #ff743e;
-		font: 500 40px/1.25 $jos;
+		font-weight: 600;
+		line-height: 1.25;
 	}
 }

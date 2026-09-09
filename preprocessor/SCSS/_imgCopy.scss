@@ -20,8 +20,10 @@
 	.cta {
 		font: 600 16px $int;
 
-		+ .cta {
-			margin-left: 2rem;
+		@include md {
+			+ .cta {
+				margin-left: 2rem;
+			}
 		}
 	}
 }

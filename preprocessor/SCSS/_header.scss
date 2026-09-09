@@ -2,12 +2,14 @@
 
 .header {
 	border-bottom: 3px solid #ff743e;
+	position: relative;
+	z-index: 1000;
 
 	.wide {
 		padding-block: 1rem;
 	}
 
-	.nav {
+	.nav_site {
 		.anchor {
 			cursor: pointer;
 
@@ -27,13 +29,68 @@
 		}
 
 		li {
+			@include tab-mob {
+				border-top: 1px solid #ff743e;
+				padding-block: 0.5rem;
+			}
+
 			+ li {
-				margin-left: 1.5rem;
+				@include lg {
+					margin-left: 1.5rem;
+				}
 			}
 		}
 
 		a {
 			text-decoration: none;
+		}
+
+		&.mob-nav {
+			@include tab-mob {
+				background: #fff;
+				border-block: 3px solid #ff743e;
+				padding-top: 1rem;
+
+				.nav {
+					margin-top: 1rem;
+				}
+			}
+		}
+	}
+
+	.call_nav {
+		position: absolute;
+		right: 1.5rem;
+		top: 50%;
+		transform: translateY(-50%);
+
+		.line {
+			background: $orange;
+			height: 2px;
+			width: 18px;
+
+			+ .line {
+				margin-top: 3px;
+			}
+		}
+
+		&.is-active {
+			transform: translateX(5px) translateY(-3px);
+			transform-origin: top;
+
+			.line {
+				&:nth-of-type(1) {
+					transform: rotate(45deg) translateY(4px);
+				}
+
+				&:nth-of-type(2) {
+					display: none;
+				}
+
+				&:nth-of-type(3) {
+					transform: rotate(135deg) translateY(4px);
+				}
+			}
 		}
 	}
 }

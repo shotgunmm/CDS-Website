@@ -1,10 +1,9 @@
 @use 'mixins' as *;
 
 .what-we-do {
+	@include imgCoverBg();
 	background: #fdfbf9;
 	padding-block: 3rem;
-
-	@include imgCoverBg();
 
 	.bod-end {
 		border-right: 1px solid $teal;
@@ -48,13 +47,59 @@
 				}
 			}
 
+			.service-chevron {
+				color: $orange;
+				transition: transform 0.3s ease;
+			}
+
 			+ .service-name {
 				border-top: 1px solid $teal;
 			}
 		}
 
 		.service-wrap {
-			display: none;
+			@include mob {
+				border-bottom: 1px solid $teal;
+				padding-block: 1.25rem;
+
+				&:first-child {
+					border-top: 1px solid $teal;
+				}
+			}
+
+			@include md {
+				display: none;
+			}
+
+			.service-text {
+				@include mob {
+					display: flex;
+					max-height: 0;
+					opacity: 0;
+					overflow: hidden;
+
+					transition:
+						max-height 0.4s ease,
+						opacity 0.3s ease;
+				}
+
+				.icon {
+					flex: 0 0 64px;
+					height: 64px;
+					width: 64px;
+
+					@include md {
+						flex: 0 0 92px;
+						height: 92px;
+						width: 92px;
+					}
+
+					img {
+						height: 100%;
+						width: 100%;
+					}
+				}
+			}
 
 			h2 {
 				color: $orange;
@@ -68,6 +113,24 @@
 
 			&.active {
 				display: block;
+
+				@include mob {
+					.service-name {
+						.name {
+							color: #000;
+							font-weight: 700;
+						}
+
+						.service-chevron {
+							transform: rotate(180deg);
+						}
+					}
+
+					.service-text {
+						max-height: 1000px;
+						opacity: 1;
+					}
+				}
 			}
 		}
 	}

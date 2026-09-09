@@ -1,7 +1,0 @@
-mixin heading(head, p = null, center = true, selector = null)
-    - let centerCall = center ? 'text-center' : '';
-    .head(class=[centerCall, selector])
-        h2.mb-0= head
-        if p
-            .mt-4
-                p= p

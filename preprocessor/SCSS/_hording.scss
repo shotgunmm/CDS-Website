@@ -1,26 +1,32 @@
 @use 'mixins' as *;
 
 .hording {
-	isolation: isolate;
-	padding-inline: 8rem;
-	position: relative;
+	@include md {
+		isolation: isolate;
+		padding-inline: 8rem;
+		position: relative;
 
-	&__bg-img {
-		@include absolute-fill;
-		z-index: -1;
+		&__bg-img {
+			@include absolute-fill;
+			z-index: -1;
 
-		img {
-			height: 100%;
-			object-fit: cover;
+			img {
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 	}
 
 	&__wrap {
 		background: #fff;
 		max-width: 545px;
-		min-height: 375px;
-		padding: 5rem 2rem 2.5rem;
+		padding: 3rem 1.5rem 2rem;
 		width: 100%;
+
+		@include md {
+			min-height: 375px;
+			padding: 5rem 2rem 2.5rem;
+		}
 	}
 
 	.logo {
@@ -29,16 +35,23 @@
 
 	h2 {
 		color: #ff743e;
-		font: 600 40px/1.25 $jos;
+		font-weight: 600;
+		line-height: 1.25;
 	}
 
 	p {
 		color: #3f3f3f;
-		font-size: 18px;
+
+		@include md {
+			font-size: 18px;
+		}
 	}
 
 	.cta {
-		font-size: 18px;
 		font-weight: 600;
+
+		@include md {
+			font-size: 18px;
+		}
 	}
 }
