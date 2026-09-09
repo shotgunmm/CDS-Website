@@ -25,6 +25,7 @@
 					<a href="index.html" aria-label="Home"><img src="images/logo.svg" alt="" height="40" width="230" loading="lazy" /></a>
 				</div>
 				<nav class="nav_site d-none d-lg-flex align-items-center" id="siteNav" aria-label="Navigation" role="navigation">
+					<a class="cta brand ms-lg-auto d-lg-none" href="#">GET STARTED</a>
 					<ul class="nav">
 						<li><a href="/">Home</a></li>
 						<li><a href="about-us.html">About Us</a></li>
@@ -32,7 +33,7 @@
 						<li><a class="active" href="contact.html">Contact</a></li>
 					</ul>
 				</nav>
-				<a class="cta brand ms-lg-auto" href="#">GET STARTED</a>
+				<a class="cta brand ms-lg-auto d-none d-lg-block" href="#">GET STARTED</a>
 				<div class="call_nav align-items-center d-flex flex-column d-lg-none justify-content-center ms-auto" id="navCall" role="button" tabindex="0" aria-label="Toggle Navigation"><span class="line"></span><span class="line"></span><span class="line"></span></div>
 			</div>
 		</header>
@@ -53,7 +54,7 @@
 				<div class="container container1280">
 					<div class="row gx-md-5">
 						<div class="col-md-8">
-							<div class="contact__form">
+							<div class="contact__form pb-5 pb-md-0">
 								<h2 class="mb-4">Send us a Message</h2>
 								<form class="form" action=""></form>
 								<div class="row">
@@ -87,7 +88,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-4 mt-5 mt-md-0">
 							<div class="contact-meta">
 								<h2>Get in Touch</h2>
 								<p>
@@ -110,7 +111,7 @@
 		<footer class="footer" role="contentinfo">
 			<div class="container-fluid wide">
 				<div class="row justify-content-between">
-					<div class="col-md-auto mb-4">
+					<div class="col-md-auto mb-5 mb-md-4">
 						<div class="meta-footer" style="max-width: 360px">
 							<div class="logo mb-4"><img src="images/logo-footer.svg" alt="" loading="lazy" /></div>
 							<div class="meta">
@@ -118,7 +119,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-auto mb-4">
+					<div class="col-md-auto mb-5 mb-md-4">
 						<div class="links">
 							<h2 class="text-uppercase mb-0">Services</h2>
 							<ul class="link nav flex-column">
@@ -129,7 +130,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col-md-auto mb-4">
+					<div class="col-md-auto mb-5 mb-md-4">
 						<div class="links">
 							<h2 class="text-uppercase mb-0">company</h2>
 							<ul class="link nav flex-column">
@@ -151,11 +152,11 @@
 					</div>
 				</div>
 				<hr />
-				<div class="row justify-content-between py-4">
+				<div class="row justify-content-between text-center text-md-start py-4">
 					<div class="col-md-auto">
 						<p>© 2026 Consolidated Default Services, LLC. All rights reserved.</p>
 					</div>
-					<div class="col-md-auto link-terms"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+					<div class="col-md-auto link-terms mt-4 mt-md-0"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
 				</div>
 			</div>
 		</footer>
@@ -170,6 +171,8 @@
 			</div>
 		</div>
 		<script src="js/app.js"></script>
+		<script src="js/navToggle.js"></script>
 		<script src="js/scrollTop.js"></script>
+		<script src="js/localLink.js"></script>
 	</body>
 </html>
