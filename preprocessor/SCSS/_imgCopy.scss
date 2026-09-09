@@ -7,14 +7,10 @@
 		color: $orange;
 	}
 
-	h3,
-	.h3 {
-		color: $orange;
-		font: 500 22px/1.5 $int;
-	}
-
-	p {
-		font: 18px/1.5 $int;
+	@include md {
+		p {
+			font: 18px/1.5 $int;
+		}
 	}
 
 	.cta {

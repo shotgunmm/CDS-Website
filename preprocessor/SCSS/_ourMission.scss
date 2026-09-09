@@ -7,7 +7,11 @@
 	.saying {
 		p {
 			color: #787878;
-			font: italic 500 20px/1.5 $jos;
+			font: italic 500 18px/1.5 $jos;
+
+			@include md {
+				font-size: 20px;
+			}
 		}
 
 		.name {

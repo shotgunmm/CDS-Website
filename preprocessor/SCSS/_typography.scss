@@ -10,6 +10,16 @@ h2,
 	}
 }
 
+h3,
+.h3 {
+	color: $orange;
+	font: 500 18px/1.5 $int;
+
+	@include md {
+		font-size: 22px;
+	}
+}
+
 p,
 .p,
 li {

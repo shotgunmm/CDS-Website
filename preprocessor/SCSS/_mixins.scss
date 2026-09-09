@@ -140,8 +140,11 @@
 
 @mixin metaBoxes($color: $teal) {
 	.box {
-		max-width: 360px;
-		padding-block: 1rem;
+		padding-block: 1.5rem;
+
+		@include md {
+			max-width: 360px;
+		}
 
 		@include md {
 			padding: 1rem 1.25rem;

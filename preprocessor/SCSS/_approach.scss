@@ -4,11 +4,21 @@
 	@include metaBoxes($orange);
 	background: #fdfbf9;
 	border-block: 3px solid #ff743e;
-	padding-block: 3rem;
+	padding-top: 3rem;
+
+	@include md {
+		padding-block: 3rem;
+	}
 
 	.bod-start {
-		+ .bod-start {
-			border-left: 1px solid $orange;
+		@include mob {
+			border-top: 1px solid $orange;
+		}
+
+		@include md {
+			+ .bod-start {
+				border-left: 1px solid $orange;
+			}
 		}
 	}
 }

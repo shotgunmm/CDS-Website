@@ -14,10 +14,12 @@ block content
     section.sec.img-copy.bg-white
         .container-fluid.wide
             .row
-                .col-md-auto
+                .col-md-auto.d-none.d-md-block
                     +imgTag('logo-about', {ext: 'jpg', className: 'img-fluid'})
                 .col-md
                     h2 Our Story
+                    .text-center.d-md-none.my-4
+                        +imgTag('logo-about', {ext: 'jpg', className: 'img-fluid'})
                     h3 CDS was founded in 2010 with a straightforward premise: mortgage servicers needed more than a referral network. They needed someone to manage what happened after the referral — to make sure files moved, deadlines were met, and vendors were held accountable across dozens of jurisdictions simultaneously.
                     p We built that capability through direct dialogue with our clients. The  problems they described weren't unique to one servicer; they were  systemic. Fragmented vendor networks. Inconsistent timelines. Compliance gaps that only surfaced at audit. No single point of accountability. We heard it repeatedly, and we built the answer.
                     p The result was a formal oversight framework spanning foreclosure,  bankruptcy, litigation, loss mitigation, title, and claims — the  foundation of what CDS does today. What began as a support function has  grown into a full-spectrum oversight practice trusted by some of the  nation's largest servicers and portfolio managers.
@@ -30,7 +32,7 @@ block content
                 .col-md-6
                     h2 Our Mission
                     p To provide comprehensive, transparent, and accountable oversight of  mortgage default services — reducing operational burden, mitigating  risk, and enabling our clients to focus on strategic priorities while we ensure execution, compliance, and performance across their portfolios.
-                .col-md-6
+                .col-md-6.mt-5.mt-md-0
                     .saying
                         p "The servicers we work with are managing enormous complexity across dozens of vendors and jurisdictions. Our job is to make that invisible to them — to ensure every file is moving, every deadline is met, and every exception is caught before it becomes a problem."
                         p.name — CDS Leadership
@@ -56,7 +58,7 @@ block content
 
             .row
                 each box, index in challengeBox
-                    .col-md-4.bod-start.mt-5
+                    .col-md-4.bod-start.mt-4.mt-md-5
                         .box.mx-auto
                             .head.d-flex.align-items-center.mb-3
                                 .h2.num.mb-0.me-2.pt-2= `${String(index + 1).padStart(2, '0')}`
