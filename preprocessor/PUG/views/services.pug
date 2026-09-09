@@ -17,7 +17,7 @@ block content
         .container-fluid.wide.ps-0
             .row.ms-0
                 .col-md-auto.px-0
-                    .lifecycle-wrap.d-flex.flex-column.justify-content-center
+                    .lifecycle-wrap.d-flex.flex-column.justify-content-md-center.text-center.text-md-start
                         h2.text-uppercase Our Oversight Lifecycle
                         .column-text.d-flex.flex-column
                             .icon.item
@@ -34,9 +34,9 @@ block content
                                 i.bi.bi-arrow-down
                             each text in ['Resolution', 'Reporting']
                                 span.item= text
-                .col-md.ps-5
+                .col-md.ps-md-5
                     .wrap
-                        .heading
+                        .heading.mb-3
                             h2.text-uppercase our approach
                             h3 Oversight That Drives Outcomes
                         p Most servicers work with dozens of law firms and vendors across multiple  states — each with different processes, timelines, and reporting  standards. CDS sits between you and your vendor network, providing a  consistent oversight layer that ensures every file is moving, every  deadline is met, and every exception is caught early.
@@ -62,7 +62,7 @@ block content
                                 .approach-row
                                     .row.align-items-center.py-4
                                         .col-lg-5.col-xl-4.col-xxl-3
-                                            .head.d-flex.align-items-center
+                                            .head.d-flex.align-items-center.mb-3
                                                 h2.p.text-uppercase.d-flex.align-items-center.mb-0
                                                     span.num.h2.mb-0.mt-1= `${String(index + 1).padStart(2, '0')}`
                                                     span.text= approach.head
@@ -158,13 +158,13 @@ block content
         .our-help__head.shadow.text-center
             .container-fluid.wide
                 h2.text-uppercase how can we help?
-                .our-help__list.d-flex.justify-content-center
-
+                .our-help__list.d-flex.justify-content-center.d-none.d-md-block
                     each help, index in helps
                         a(href=`#${slugify(help.title)}`)= help.title
 
                         if index !== helps.length - 1
                             span.bar |
+
         .our-help__content
             .container-fluid.wide
                 each help in helps
@@ -175,7 +175,7 @@ block content
                                     +imgTag(`icon-${slugify(help.title)}`, {ext: 'svg'})
                                 h2.mb-0.mt-1= help.title
                         .col-md
-                            .text
+                            .text.pt-4.pt-md-0
                                 p= help.text
                                 ul
                                     each li in help.list

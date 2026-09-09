@@ -24,13 +24,21 @@
 }
 
 .approaches {
-	padding-block: 5rem;
+	padding-block: 0 3rem;
+
+	@include md {
+		padding-block: 5rem;
+	}
 
 	.lifecycle-wrap {
 		background: $orange;
-		max-width: 265px;
-		min-height: 100%;
-		padding: 2.5rem;
+		padding: 3rem 1.5rem 2rem;
+
+		@include md {
+			max-width: 265px;
+			min-height: 100%;
+			padding: 2.5rem;
+		}
 
 		h2 {
 			color: #fff;
@@ -49,7 +57,11 @@
 	}
 
 	.wrap {
-		padding-block: 4rem;
+		padding-block: 3rem;
+
+		@include md {
+			padding-block: 4rem;
+		}
 
 		.approach-wrap {
 			border-block: 1px solid $orange;
