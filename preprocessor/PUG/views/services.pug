@@ -34,6 +34,7 @@ block content
                                 i.bi.bi-arrow-down
                             each text in ['Resolution', 'Reporting']
                                 span.item= text
+
                 .col-md.ps-md-5
                     .wrap
                         .heading.mb-3
@@ -158,7 +159,7 @@ block content
         .our-help__head.shadow.text-center
             .container-fluid.wide
                 h2.text-uppercase how can we help?
-                .our-help__list.d-flex.justify-content-center.d-none.d-md-block
+                .our-help__list.d-flex.justify-content-center.d-none.d-md-flex
                     each help, index in helps
                         a(href=`#${slugify(help.title)}`)= help.title
 

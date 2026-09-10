@@ -54,8 +54,19 @@ block content
                     p We monitor every file, enforce every SLA, and hold every vendor accountable — so you stay compliant and in control without building the infrastructure to do it yourself.
                     p We don't replace your vendors. We make them perform.
                     .cta-row.d-flex.flex-column.flex-md-row.mt-md-4.gap-4.gap-lg-0
-                        each cta in ['schedule a consultation', 'explore services']
-                            +cta(cta, 'orange justify-content-center')
+                        -
+                            const ctaMeta = [
+                                {
+                                    text: 'schedule a consultation',
+                                    link: 'contact.html'
+                                },
+                                {
+                                    text: 'explore services',
+                                    link: 'services.html'
+                                }
+                            ]
+                        each cta in ctaMeta
+                            +cta(cta.text, 'orange justify-content-center', null, cta.link)
 
     section.sec-my.challenges
         .container.container1280
@@ -104,37 +115,37 @@ block content
                     {
                         head: 'Bankruptcy Oversight',
                         icon: true,
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
+                        text: 'A seamless national solution across all 94 U.S. Bankruptcy Courts, managed by experienced attorneys and paralegals from initiation through resolution.'
                     },
                     {
                         head: 'Litigation Oversight',
                         icon: true,
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
+                        text: 'Management and tracking of contested litigation matters with milestone monitoring, discovery oversight, and vendor accountability.'
                     },
                     {
                         head: 'Eviction Oversight',
                         icon: true,
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
+                        text: 'Coordination of post-foreclosure eviction proceedings to ensure timely property possession and compliance.'
                     },
                     {
                         head: 'Title Curative',
                         icon: true,
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
+                        text: 'Cradle-to-grave monitoring of title issues — from senior lien clearance and legal description defects to title claims — managing each from identification through resolution.'
                     },
                     {
                         head: 'Claims Oversight',
                         icon: true,
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
+                        text: 'End-to-end visibility and control across the claims lifecycle, covering FHA, FNMA, FHLMC, MI, VA, USDA, and eviction-related claims.'
                     },
                     {
                         head: 'Loss Mitigation',
                         icon: true,
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
+                        text: 'Oversight of borrower-retention and resolution-driven strategies including short sales, deeds in lieu, and cash-for-keys programs.'
                     },
                     {
                         head: 'FTE Staffing & Capacity',
                         icon: true,
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sint nam id rerum, quidem, voluptate eligendi doloremque veritatis velit aut consectetur. Pariatur delectus consequuntur eius sunt, dolorem laudantium minima odit accusantium beatae sit impedit hic cumque.'
+                        text: 'Data-driven staffing analysis to establish baseline requirements, balance workloads, and optimize organizational structures for oversight engagements.'
                     }
                 ]
 
@@ -182,7 +193,7 @@ block content
                                         h2= item.head
 
                                     p= item.text
-                                    +cta('Learn More', 'orange')
+                                    +cta('Learn More', 'orange', null, `services.html#${serviceSlug}`)
 
     section.track-records
         .container(style="max-width:780px")

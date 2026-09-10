@@ -11,7 +11,8 @@ mixin footer()
                 ul.link.nav.flex-column
                     each link in links
                         li
-                            a(href=pageHref(link))= link
+                            //- a(href=pageHref(link))= link
+                            a(href='#')= link
 
     footer.footer(role="contentinfo")
         .container-fluid.wide

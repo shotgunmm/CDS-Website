@@ -1,4 +1,4 @@
-mixin cta(text, color='brand', selector=false, link="#", target=false, icon=false)
+mixin cta(text, color='brand', selector=null, link="#", target=null, icon=null)
     - const attrs = target ? { target: '_blank' } : {}
     if icon
         a.cta&attributes(attrs)(href=link, class=[color, selector]) #{text} #[i.ms-2.bi.bi-chevron-right]
