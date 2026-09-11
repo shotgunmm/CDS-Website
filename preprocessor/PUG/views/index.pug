@@ -92,7 +92,7 @@ block content
                     .col-lg-4.bod-start
                         .box.mx-auto
                             .head.d-flex.align-items-center.mb-3
-                                .h2.num.mb-0.me-2.pt-2= `${String(index + 1).padStart(2, '0')}`
+                                .h2.num.mb-0.me-2.pt-1= `${String(index + 1).padStart(2, '0')}`
                                 h2.text-uppercase.mb-0= box.head
                             .text
                                 p= box.text
@@ -109,91 +109,90 @@ block content
                 const whatWeDo = [
                     {
                         head: 'Foreclosure Oversight',
-                        icon: true,
                         text: 'Cradle-to-grave litigation monitoring with attorney performance scorecarding, driving efficiency, compliance, and predictable outcomes across your entire attorney matrix.'
                     },
                     {
                         head: 'Bankruptcy Oversight',
-                        icon: true,
                         text: 'A seamless national solution across all 94 U.S. Bankruptcy Courts, managed by experienced attorneys and paralegals from initiation through resolution.'
                     },
                     {
                         head: 'Litigation Oversight',
-                        icon: true,
                         text: 'Management and tracking of contested litigation matters with milestone monitoring, discovery oversight, and vendor accountability.'
                     },
                     {
                         head: 'Eviction Oversight',
-                        icon: true,
                         text: 'Coordination of post-foreclosure eviction proceedings to ensure timely property possession and compliance.'
                     },
                     {
                         head: 'Title Curative',
-                        icon: true,
                         text: 'Cradle-to-grave monitoring of title issues — from senior lien clearance and legal description defects to title claims — managing each from identification through resolution.'
                     },
                     {
                         head: 'Claims Oversight',
-                        icon: true,
                         text: 'End-to-end visibility and control across the claims lifecycle, covering FHA, FNMA, FHLMC, MI, VA, USDA, and eviction-related claims.'
                     },
                     {
                         head: 'Loss Mitigation',
-                        icon: true,
                         text: 'Oversight of borrower-retention and resolution-driven strategies including short sales, deeds in lieu, and cash-for-keys programs.'
                     },
                     {
                         head: 'FTE Staffing & Capacity',
-                        icon: true,
-                        text: 'Data-driven staffing analysis to establish baseline requirements, balance workloads, and optimize organizational structures for oversight engagements.'
+                        text: 'Data-driven staffing analysis to establish baseline requirements, balance workloads, and optimize organizational structures for oversight engagements.',
+                        link: '#fte-staffing-capacity-management'
                     }
                 ]
+
+                const serviceSlug = text =>
+                    text
+                        .toLowerCase()
+                        .trim()
+                        .replace(/&/g, 'and')
+                        .replace(/[^a-z0-9\s-]/g, '')
+                        .replace(/\s+/g, '-')
 
             #whatWeDo.services.row.mt-5
                 .col-lg-4.d-none.d-lg-block.bod-end.pe-5
                     .d-flex.flex-column.list-do
-                        each item, index in whatWeDo
-                            -
-                                const serviceSlug = item.head
-                                    .toLowerCase()
-                                    .trim()
-                                    .replace(/&/g, 'and')
-                                    .replace(/[^a-z0-9\s-]/g, '')
-                                    .replace(/\s+/g, '-')
 
-                            span.service-name.py-3(data-service=serviceSlug, class=(index === 0 ? 'active' : ''))
+                        each item, index in whatWeDo
+                            - const slug = serviceSlug(item.head)
+
+                            span.service-name.py-3(
+                                data-service=slug
+                                class=index === 0 ? 'active' : ''
+                            )
                                 .inner.d-flex.align-items-center.py-1
                                     span.num.pt-1= String(index + 1).padStart(2, '0')
                                     span.name.text-uppercase= item.head
 
-                .col-md.ps-lg-5
+                .col-lg.ps-lg-5
                     each item, index in whatWeDo
                         -
-                            const serviceSlug = item.head
-                                .toLowerCase()
-                                .trim()
-                                .replace(/&/g, 'and')
-                                .replace(/[^a-z0-9\s-]/g, '')
-                                .replace(/\s+/g, '-')
+                            const slug = serviceSlug(item.head)
+                            const hashLink = item.link
+                                ? `services.html${item.link}`
+                                : `services.html#${slug}`
 
-                        .service-wrap(data-service=serviceSlug, class=(index === 0 ? 'active' : ''))
+                        .service-wrap(
+                            data-service=slug
+                            class=index === 0 ? 'active' : ''
+                        )
+
                             .service-name.d-flex.align-items-center.d-lg-none
                                 span.num.pt-1= String(index + 1).padStart(2, '0')
                                 span.name.text-uppercase= item.head
+
                                 span.ms-auto.service-chevron
                                     i.bi.bi-chevron-down
 
                             .service-text.d-flex.flex-lg-row.flex-column
-                                if item.icon
-                                    .icon.d-flex.align-items-center.justify-content-center.me-4.mt-4.mt-lg-0
-                                        +imgTag(`icon-${serviceSlug}`, {ext: 'svg'})
-
+                                .icon.d-flex.align-items-center.justify-content-center.me-4.mt-4.mt-lg-0
+                                    +imgTag(`icon-${slug}`, {ext: 'svg'})
                                 .copy.mt-4.mt-lg-0
                                     .d-none.d-lg-block
                                         h2= item.head
-
                                     p= item.text
-                                    +cta('Learn More', 'orange', null, `services.html#${serviceSlug}`)
+                                    +cta('Learn More', 'orange', null, hashLink)
 
     section.track-records
         .container(style="max-width:780px")
