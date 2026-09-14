@@ -20,7 +20,7 @@ mixin hero(h2, options = {})
             : ''
 
     mixin heroContent()
-        .hero__container(class=containerClass)
+        .hero__container.fade-in(class=containerClass)
             .hero__wrap
                 if logo
                     .logo

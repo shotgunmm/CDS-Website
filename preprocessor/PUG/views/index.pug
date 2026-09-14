@@ -16,7 +16,7 @@ block content
         }
     )
 
-    section.cds-meta
+    section.cds-meta.fade-in
         .container(style="max-width:780px")
             .row.text-center.justify-content-between
                 -
@@ -44,7 +44,7 @@ block content
                         h2.mb-0= meta.num
                         p= meta.text
 
-    section.sec.img-copy
+    section.sec.img-copy.fade-in
         .container(style="max-width:1100px")
             .row
                 .col-md-auto.text-center
@@ -68,7 +68,7 @@ block content
                         each cta in ctaMeta
                             +cta(cta.text, 'orange justify-content-center', null, cta.link)
 
-    section.sec-my.challenges
+    section.sec-my.challenges.fade-in
         .container.container1280
             +headSec('The Challenge', 'Default Portfolios Are Getting Harder to Manage', 'Dozens of law firms. Multiple states. Evolving regulations. And the cost of building oversight in-house keeps climbing. CDS is the single layer of accountability across all of it — so you don\'t have to be.')
             -
@@ -100,7 +100,7 @@ block content
             .note.text-center.mt-5
                 p That's exactly what CDS was built to solve.
 
-    section.sec-my.what-we-do
+    section.sec-my.what-we-do.fade-in
         .img-bg
             +imgTag('what-we-do-bg')
         .container.container1040
@@ -194,7 +194,7 @@ block content
                                     p= item.text
                                     +cta('Learn More', 'orange', null, hashLink)
 
-    section.track-records
+    section.track-records.fade-in
         .container(style="max-width:780px")
             +headSec('proven track record', 'Results That Speak for Themselves')
 
@@ -220,7 +220,7 @@ block content
                         h2.mb-0= meta.num
                         p= meta.text
 
-    section.sec-my.why-cds
+    section.sec-my.why-cds.fade-in
         .container-fluid.wide
             +headSec('why cds', 'The CDS Difference')
 
@@ -271,3 +271,6 @@ block content
                             p= meta.text
 
     +hording('Ready to Strengthen Your Default Operations?', 'Let\'s discuss how CDS can reduce your risk, improve compliance, and deliver measurable results.', 'CONTACT US TODAY')
+
+block footerScripts
+    script(src="js/serviceToggle.js")

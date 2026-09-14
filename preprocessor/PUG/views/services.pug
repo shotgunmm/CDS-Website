@@ -13,7 +13,7 @@ block content
         }
     )
 
-    section.sec.approaches
+    section.sec.approaches.fade-in
         .container-fluid.wide.ps-0
             .row.ms-0
                 .col-md-auto.px-0
@@ -70,7 +70,7 @@ block content
                                         .col-lg
                                             p= approach.text
 
-    section.our-help
+    section#ourHelp.our-help.fade-in
         -
             const helps = [
                 {
@@ -183,3 +183,6 @@ block content
                                         li= li
 
     +hording('Need a Customized Oversight Solution?', 'Every servicer\'s default portfolio is different. Let\'s discuss your specific needs.', 'request a consultation')
+
+block footerScripts
+    script(src="js/serviceToggle.js")

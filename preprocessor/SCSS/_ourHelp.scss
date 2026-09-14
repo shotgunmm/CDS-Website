@@ -1,10 +1,15 @@
 @use 'mixins' as *;
 
 .our-help {
+	position: relative;
+	isolation: isolate;
 	&__head {
 		background: #f6f6f6;
 		padding-block: 1.25rem;
-
+		position: sticky;
+		left: 0;
+		top: 0;
+		width: 100%;
 		h2 {
 			color: $teal;
 			font: 700 16px/1.5 $int;
@@ -20,6 +25,11 @@
 
 		a {
 			color: $dark;
+
+			&:hover,
+			&.active {
+				color: $teal;
+			}
 		}
 	}
 
@@ -49,4 +59,8 @@
 			background: $light;
 		}
 	}
+}
+
+html:has(.our-help) {
+	scroll-padding-top: 100px;
 }

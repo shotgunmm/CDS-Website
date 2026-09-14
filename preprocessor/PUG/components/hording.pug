@@ -2,7 +2,7 @@ mixin hording(h2, text, cta)
     -
         const hordingPic = slugify(pic || mainPage)
 
-    section.sec-my.hording.shadow
+    section.sec-my.hording.shadow.fade-in
         .hording__bg-img
             +imgTag(`hording-${hordingPic}`, {className: 'w-100'})
 
