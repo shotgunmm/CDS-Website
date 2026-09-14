@@ -1,15 +1,17 @@
 @use 'mixins' as *;
 
 .our-help {
-	position: relative;
 	isolation: isolate;
+	position: relative;
+
 	&__head {
 		background: #f6f6f6;
+		left: 0;
 		padding-block: 1.25rem;
 		position: sticky;
-		left: 0;
 		top: 0;
 		width: 100%;
+
 		h2 {
 			color: $teal;
 			font: 700 16px/1.5 $int;
@@ -62,5 +64,9 @@
 }
 
 html:has(.our-help) {
-	scroll-padding-top: 100px;
+	scroll-padding-top: 130px;
+
+	@include xxl {
+		scroll-padding-top: 100px;
+	}
 }
