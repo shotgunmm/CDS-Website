@@ -18,7 +18,7 @@
 	}
 
 	&__wrap {
-		background: #fff;
+		background: $white;
 		max-width: 545px;
 		padding: 3rem 1.5rem 2rem;
 		width: 100%;
@@ -34,13 +34,13 @@
 	}
 
 	h2 {
-		color: #ff743e;
+		color: $orange;
 		font-weight: 600;
 		line-height: 1.25;
 	}
 
 	p {
-		color: #3f3f3f;
+		color: $dark;
 
 		@include md {
 			font-size: 18px;

@@ -2,8 +2,8 @@
 
 .approach {
 	@include metaBoxes($orange);
-	background: #fdfbf9;
-	border-block: 3px solid #ff743e;
+	background: $light;
+	border-block: 3px solid $orange;
 	padding-top: 3rem;
 
 	@include md {
@@ -41,13 +41,13 @@
 		}
 
 		h2 {
-			color: #fff;
+			color: $white;
 			font: 700 20px/1.5 $int;
 			letter-spacing: 1px;
 		}
 
 		.column-text {
-			color: #fff;
+			color: $white;
 			font: 20px/1.5 $int;
 
 			.item {

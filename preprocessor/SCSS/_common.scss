@@ -73,14 +73,14 @@ a,
 	}
 
 	&.brand {
-		background: #739dd2;
-		border: 1px solid #739dd2;
-		color: #fff !important;
+		background: $teal;
+		border: 1px solid $teal;
+		color: $white !important;
 
 		&:hover {
-			background: #fff;
-			border: 1px solid #739dd2;
-			color: #739dd2 !important;
+			background: $white;
+			border: 1px solid $teal;
+			color: $teal !important;
 		}
 	}
 

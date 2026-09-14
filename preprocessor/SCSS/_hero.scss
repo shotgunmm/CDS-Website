@@ -34,7 +34,7 @@
 	}
 
 	&__wrap {
-		background: #fff;
+		background: $white;
 		max-width: 565px;
 		padding: 3rem 1.5rem 2rem;
 		width: 100%;
@@ -69,12 +69,12 @@
 	}
 
 	h1 {
-		color: #739dd2;
+		color: $teal;
 		font: 700 16px $int;
 	}
 
 	h2 {
-		color: #ff743e;
+		color: $orange;
 		font-weight: 600;
 		line-height: 1.25;
 	}

@@ -2,7 +2,7 @@
 
 .what-we-do {
 	@include imgCoverBg();
-	background: #fdfbf9;
+	background: $light;
 	padding-block: 3rem;
 
 	.bod-end {
@@ -13,10 +13,11 @@
 		.service-name {
 			.inner {
 				cursor: pointer;
+				letter-spacing: 0.5px;
 
 				&:hover {
 					.name {
-						color: #000;
+						color: $teal;
 					}
 				}
 			}
@@ -28,7 +29,7 @@
 			}
 
 			.name {
-				color: #3f3f3f;
+				color: $dark;
 				font: 500 16px/1 $int;
 			}
 
@@ -41,7 +42,7 @@
 					}
 
 					.name {
-						color: #000;
+						color: $black;
 						font-weight: 700;
 					}
 				}
@@ -108,7 +109,7 @@
 			}
 
 			p {
-				color: #3f3f3f;
+				color: $dark;
 			}
 
 			&.active {
@@ -117,7 +118,7 @@
 				@include tab-mob {
 					.service-name {
 						.name {
-							color: #000;
+							color: $black;
 							font-weight: 700;
 						}
 

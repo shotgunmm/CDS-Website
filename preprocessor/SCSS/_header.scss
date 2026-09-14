@@ -1,7 +1,7 @@
 @use 'mixins' as *;
 
 .header {
-	border-bottom: 3px solid #ff743e;
+	border-bottom: 3px solid $orange;
 	position: relative;
 	z-index: 1000;
 
@@ -20,12 +20,13 @@
 
 		a,
 		.anchor {
-			color: #000;
+			letter-spacing: normal;
+			color: $black;
 			font: 14px $mon;
 
 			&.active,
 			&:hover {
-				color: #739dd2;
+				color: $teal;
 			}
 
 			&.active {
@@ -35,7 +36,7 @@
 
 		li {
 			@include tab-mob {
-				border-top: 1px solid #ff743e;
+				border-top: 1px solid $orange;
 				padding-block: 0.5rem;
 			}
 
@@ -52,8 +53,8 @@
 
 		&.mob-nav {
 			@include tab-mob {
-				background: #fff;
-				border-block: 3px solid #ff743e;
+				background: $white;
+				border-block: 3px solid $orange;
 				padding-top: 1rem;
 
 				.nav {

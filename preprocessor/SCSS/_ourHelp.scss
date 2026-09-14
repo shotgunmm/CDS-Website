@@ -19,7 +19,7 @@
 		}
 
 		a {
-			color: #3f3f3f;
+			color: $dark;
 		}
 	}
 
@@ -46,7 +46,7 @@
 		}
 
 		&:nth-child(even) {
-			background: #fdfbf9;
+			background: $light;
 		}
 	}
 }

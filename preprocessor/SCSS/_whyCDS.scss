@@ -2,7 +2,7 @@
 
 .why-cds {
 	.box {
-		background: #fdfbf9;
+		background: $light;
 		margin-top: 2.5rem;
 
 		.icon {
@@ -15,7 +15,7 @@
 		}
 
 		p {
-			color: #3f3f3f;
+			color: $dark;
 		}
 	}
 }

@@ -1,15 +1,15 @@
 @use 'mixins' as *;
 
 .cds-meta {
-	border-bottom: 3px solid #ff743e;
+	border-bottom: 3px solid $orange;
 	padding-block: 2rem;
 
 	h2 {
-		color: #739dd2;
+		color: $teal;
 	}
 
 	p {
-		color: #000;
+		color: $black;
 		font: 14px $int;
 	}
 
