@@ -159,7 +159,7 @@ block content
         .our-help__head.shadow.text-center
             .container-fluid.wide
                 h2.text-uppercase how can we help?
-                .our-help__list.d-flex.justify-content-center.d-none.d-md-flex
+                .our-help__list.d-flex.justify-content-center.flex-wrap.d-none.d-md-flex
                     each help, index in helps
                         a(href=`#${slugify(help.title)}`)= help.title
 
