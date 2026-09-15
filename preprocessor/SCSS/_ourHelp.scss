@@ -19,18 +19,58 @@
 	}
 
 	&__list {
-		gap: 0.5rem;
-
-		.bar {
-			color: $orange;
+		@include tab-mob {
+			isolation: isolate;
+			position: relative;
 		}
 
-		a {
-			color: $dark;
+		.select-help {
+			@include tab-mob {
+				background: $white;
+				border: 1px solid $orange;
+				color: $dark;
+				font: 500 18px/1.5 $int;
+				padding: 0.75rem;
+			}
 
-			&:hover,
-			&.active {
-				color: $teal;
+			.icon {
+				color: $orange;
+			}
+		}
+
+		.select-help-option {
+			@include tab-mob {
+				background: $white;
+				border: 1px solid $orange;
+				border-top: 0 none;
+				left: 0;
+				padding-block: 0.5rem;
+				position: absolute;
+				top: 100%;
+				width: 100%;
+			}
+
+			@include lg {
+				gap: 0.5rem;
+			}
+
+			.bar {
+				color: $orange;
+			}
+
+			a {
+				color: $dark;
+				font: 500 18px $int;
+
+				@include tab-mob {
+					margin-block: 0.75rem;
+					text-decoration: none;
+				}
+
+				&:hover,
+				&.active {
+					color: $teal;
+				}
 			}
 		}
 	}
@@ -64,9 +104,13 @@
 }
 
 html:has(.our-help) {
-	scroll-padding-top: 130px;
+	scroll-padding-top: 140px;
+
+	@include md {
+		scroll-padding-top: 150px;
+	}
 
 	@include xxl {
-		scroll-padding-top: 100px;
+		scroll-padding-top: 120px;
 	}
 }

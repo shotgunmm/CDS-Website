@@ -34,8 +34,7 @@ function serviceToggle() {
 		serviceName.addEventListener('click', function () {
 			if (window.innerWidth < breakpoint) return;
 
-			const service = this.dataset.service;
-			setActiveService(service);
+			setActiveService(this.dataset.service);
 		});
 	});
 
@@ -44,6 +43,7 @@ function serviceToggle() {
 			if (window.innerWidth >= breakpoint) return;
 
 			const wrap = this.closest('.service-wrap');
+
 			if (!wrap) return;
 
 			const service = wrap.dataset.service;
@@ -67,17 +67,11 @@ function serviceToggle() {
 		wasDesktop = isDesktop;
 
 		if (isDesktop) {
-			if (!activeService) {
-				setActiveService(firstService);
-			} else {
-				setActiveService(activeService);
-			}
+			setActiveService(activeService || firstService);
+		} else if (activeService) {
+			setActiveService(activeService);
 		} else {
-			if (activeService) {
-				setActiveService(activeService);
-			} else {
-				closeAllServices();
-			}
+			closeAllServices();
 		}
 	});
 
@@ -95,23 +89,50 @@ function serviceToggle() {
 		});
 	}
 
-	// if (window.innerWidth >= breakpoint) {
 	const currentHash = window.location.hash;
 
 	if (currentHash) {
 		setActiveHelpLink(currentHash);
 	}
-	// }
 
 	helpLinks.forEach((link) => {
 		link.addEventListener('click', function () {
 			if (window.innerWidth < breakpoint) return;
 
-			const hash = this.getAttribute('href');
-
-			setActiveHelpLink(hash);
+			setActiveHelpLink(this.getAttribute('href'));
 		});
 	});
+
+	const helpSelect = document.querySelector('#ourHelp .select-help');
+	const helpSelectText = helpSelect?.querySelector('.text');
+	const helpSelectOption = document.querySelector('#ourHelp .select-help-option');
+	console.log(helpSelect, helpSelectText, helpSelectOption);
+
+	if (!helpSelect || !helpSelectText || !helpSelectOption) return;
+
+	helpSelect.addEventListener('click', function () {
+		if (window.innerWidth < breakpoint) return;
+		helpSelectOption.classList.toggle('d-none');
+		this.classList.toggle('clicked');
+		const currentHash = window.location.hash;
+
+		if (currentHash) {
+			helpSelectText.textContent = currentHash.substring(1);
+		}
+	});
+
+	function updateHelpSelect() {
+		if (window.innerWidth >= breakpoint) {
+			helpSelectOption.classList.remove('d-none');
+		} else {
+			helpSelectOption.classList.add('d-none');
+			helpSelect.classList.remove('clicked');
+		}
+	}
+
+	updateHelpSelect();
+
+	window.addEventListener('resize', updateHelpSelect);
 }
 
 serviceToggle();

@@ -159,12 +159,17 @@ block content
         .our-help__head.shadow.text-center
             .container-fluid.wide
                 h2.text-uppercase how can we help?
-                .our-help__list.d-flex.justify-content-center.flex-wrap.d-none.d-md-flex
-                    each help, index in helps
-                        a(href=`#${slugify(help.title)}`)= help.title
+                .our-help__list.mt-4
+                    .select-help.d-lg-none.d-flex.justify-content-between
+                        span.text Select Service
+                        span.icon
+                            i.bi.bi-chevron-up
+                    .select-help-option.d-none.d-lg-flex.flex-column.flex-lg-row.justify-content-center.flex-wrap
+                        each help, index in helps
+                            a(href=`#${slugify(help.title)}`)= help.title
 
-                        if index !== helps.length - 1
-                            span.bar |
+                            if index !== helps.length - 1
+                                span.d-none.d-lg-inline-block.bar |
 
         .our-help__content
             .container-fluid.wide
