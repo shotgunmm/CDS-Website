@@ -29,12 +29,18 @@
 				background: $white;
 				border: 1px solid $orange;
 				color: $dark;
+				cursor: pointer;
 				font: 500 18px/1.5 $int;
 				padding: 0.75rem;
 			}
 
 			.icon {
 				color: $orange;
+				transition: transform 0.25s ease;
+			}
+
+			&.clicked .icon {
+				transform: rotate(180deg);
 			}
 		}
 

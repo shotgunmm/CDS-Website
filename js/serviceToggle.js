@@ -82,57 +82,77 @@ function serviceToggle() {
 	}
 
 	const helpLinks = document.querySelectorAll('#ourHelp .our-help__list a[href]');
-
-	function setActiveHelpLink(hash) {
-		helpLinks.forEach((link) => {
-			link.classList.toggle('active', link.getAttribute('href') === hash);
-		});
-	}
-
-	const currentHash = window.location.hash;
-
-	if (currentHash) {
-		setActiveHelpLink(currentHash);
-	}
-
-	helpLinks.forEach((link) => {
-		link.addEventListener('click', function () {
-			if (window.innerWidth < breakpoint) return;
-
-			setActiveHelpLink(this.getAttribute('href'));
-		});
-	});
-
 	const helpSelect = document.querySelector('#ourHelp .select-help');
 	const helpSelectText = helpSelect?.querySelector('.text');
 	const helpSelectOption = document.querySelector('#ourHelp .select-help-option');
-	console.log(helpSelect, helpSelectText, helpSelectOption);
 
-	if (!helpSelect || !helpSelectText || !helpSelectOption) return;
+	if (!helpLinks.length && !helpSelect) return;
 
-	helpSelect.addEventListener('click', function () {
-		if (window.innerWidth < breakpoint) return;
-		helpSelectOption.classList.toggle('d-none');
-		this.classList.toggle('clicked');
-		const currentHash = window.location.hash;
-
-		if (currentHash) {
-			helpSelectText.textContent = currentHash.substring(1);
-		}
-	});
-
-	function updateHelpSelect() {
-		if (window.innerWidth >= breakpoint) {
-			helpSelectOption.classList.remove('d-none');
-		} else {
-			helpSelectOption.classList.add('d-none');
-			helpSelect.classList.remove('clicked');
-		}
+	function setActiveHelpLink(hash) {
+		if (!hash) return;
+		helpLinks.forEach((link) => {
+			const isActive = link.getAttribute('href') === hash;
+			link.classList.toggle('active', isActive);
+			if (isActive && helpSelectText) {
+				helpSelectText.textContent = link.textContent.trim();
+			}
+		});
 	}
 
-	updateHelpSelect();
+	if (window.location.hash) {
+		setActiveHelpLink(window.location.hash);
+	}
 
-	window.addEventListener('resize', updateHelpSelect);
+	window.addEventListener('hashchange', function () {
+		setActiveHelpLink(window.location.hash);
+	});
+
+	helpLinks.forEach((link) => {
+		link.addEventListener('click', function () {
+			const hash = this.getAttribute('href');
+			setActiveHelpLink(hash);
+
+			if (window.innerWidth < breakpoint && helpSelectOption && helpSelect) {
+				helpSelectOption.classList.add('d-none');
+				helpSelectOption.classList.remove('d-flex');
+				helpSelect.classList.remove('clicked');
+			}
+		});
+	});
+
+	if (helpSelect && helpSelectOption) {
+		helpSelect.addEventListener('click', function () {
+			if (window.innerWidth >= breakpoint) return;
+			const isOpening = helpSelectOption.classList.contains('d-none');
+			helpSelectOption.classList.toggle('d-none', !isOpening);
+			helpSelectOption.classList.toggle('d-flex', isOpening);
+			this.classList.toggle('clicked', isOpening);
+		});
+
+		document.addEventListener('click', function (e) {
+			if (window.innerWidth >= breakpoint) return;
+			if (!helpSelect.contains(e.target) && !helpSelectOption.contains(e.target)) {
+				helpSelectOption.classList.add('d-none');
+				helpSelectOption.classList.remove('d-flex');
+				helpSelect.classList.remove('clicked');
+			}
+		});
+
+		function updateHelpSelect() {
+			if (window.innerWidth >= breakpoint) {
+				helpSelectOption.classList.remove('d-none');
+				helpSelectOption.classList.add('d-flex');
+				helpSelect.classList.remove('clicked');
+			} else {
+				helpSelectOption.classList.add('d-none');
+				helpSelectOption.classList.remove('d-flex');
+				helpSelect.classList.remove('clicked');
+			}
+		}
+
+		updateHelpSelect();
+		window.addEventListener('resize', updateHelpSelect);
+	}
 }
 
 serviceToggle();
