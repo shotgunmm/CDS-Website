@@ -30,6 +30,10 @@ mixin head(title)
             block
         +linkStylesheet('css/app.min.css')
 
+        //- Client review feedback widget (staging only — remove before production launch).
+        //- Kit: Staff/cowork/wireframe-feedback-widget. Config in feedback/feedback.js ADAPT block.
+        +linkStylesheet('feedback/feedback.css')
+
         //- link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon.png")
         //- link(rel="icon", type="image/png", sizes="32x32", href="/favicon-32x32.png")
         //- link(rel="icon", type="image/png", sizes="16x16", href="/favicon-16x16.png")
