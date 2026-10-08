@@ -10,6 +10,7 @@ block vars
 //- - let titleParts = [childCurrentPage, currentPage || pageAlias, parentPage, mainPage, siteName].filter(Boolean);
 - let titleParts = [pageAlias || currentPage || mainPage, siteName].filter(Boolean);
 - let pageTitle = titleParts.join(' | ');
+- let bodyClass = 'page-' + (mainPage || '').toLowerCase().replace(/\s+/g, '-');
 
 include ../partials/head.pug
 include ../partials/header.pug
@@ -21,7 +22,7 @@ html(lang="en")
     +head(pageTitle)
         block head
 
-    body
+    body(class=bodyClass)
         +header
 
         main#main
