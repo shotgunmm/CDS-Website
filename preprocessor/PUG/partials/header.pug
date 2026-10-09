@@ -15,7 +15,7 @@ mixin navItem(item, level = 0)
         const href = item.href
             ? item.href
             : item.link === true
-                ? (item.home === true ? '/' : `${slug}.html`)
+                ? (item.home === true ? 'index.html' : `${slug}.html`)
                 : '#'
 
     li(class=liClass)
