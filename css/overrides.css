@@ -1,0 +1,224 @@
+/* CDS design overrides — Rob Sadler, Oct 2026. Loaded after app.min.css. */
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+/* UNIVERSAL STYLES */
+
+
+
+/* GENERAL */
+
+.blue-drk {color:#112953;}
+body {background: #eeeeee;}
+p, h1, h2, h3 {letter-spacing: normal!important;}
+h3 {margin-bottom: 20px;line-height:1.4!important;}
+.cta {padding: 12px 25px!important;}
+.heading h2.text-uppercase {display: none;}
+
+
+/* NAV */
+
+.header {border:none!important;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);background: white;padding: 10px 0;}
+ul.nav a {font-weight: 500;}
+.header .nav_site a, .header .nav_site .anchor {font-weight: 500;font-size: 15px!important;}
+.brand img {width: 300px;max-width: 100%;height: auto;}
+.nav_site {border-left: 1px solid #e0e0e0;height: 50px;padding-left: 50px;}
+.cta.brand {background-color: #112953;border: none!important;}
+
+
+/* CTA */
+
+.sec-my.hording {margin-top: 70px!important;margin-bottom: 70px!important;}
+.hording__wrap {padding: 3rem 4rem 4rem;max-width: 100%!important;min-height: 0;}
+.hording__container {padding: 40px 0!important;}
+.hording p {margin-bottom:30px!important;}
+
+@media (min-width: 992px) {
+    .hording__wrap {max-width: 60%!important;}
+}
+
+
+
+
+
+
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+/* HOMEPAGE STYLES */
+
+
+
+/* HERO */
+
+.hero {z-index: 900;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15) !important;}
+.hero h2 {line-height: 1.1;}
+.hero__wrap {
+    background: #fff!important;
+    max-width: 850px!important;
+    padding: 5rem 4rem 5rem!important;
+    width: 100%!important;
+    margin-bottom: 60px!important;
+}
+@media (min-width: 768px) {
+    .hero h2 {font-size: 56px;}
+    .hero__wrap {padding: 60px 60px 60px 80px!important;}
+}
+.hero .logo {display: none!important;}
+
+@media (min-width: 768px) {
+    .hero--home .hero__wrap {max-width: 850px;min-height: 0px;}
+}
+
+
+/* INTRO */
+
+.cds-meta {background: white!important;border:none!important;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15)!important;z-index: 800!important;position: relative!important;}
+.cds-meta p {font-weight: 500!important;}
+.img-copy {background: #112953!important;}
+.cds-meta+.img-copy {border:none!important;}
+.cta-row {margin-top: 2.5em!important;}
+body.page-home .sec.img-copy {background-image: url(../images/cds-home-intro-bg.jpg) !important;background-repeat: no-repeat !important;background-size: 100% !important;background-position: left bottom !important;background-color: #ededed !important;}
+.sec.img-copy h2 {color:#112953!important;}
+.sec.img-copy .img-fluid {opacity: 0!important;}
+.page-home h2.h3 {margin-bottom: 20px;line-height:1.4!important;}
+
+
+/* CHALLENGES */
+
+.challenges {background: white;margin: 0!important;padding: 80px 50px 90px 50px;}
+.challenges h3 {color: #112953!important;}
+.challenges .note p {color:#112953!important;}
+
+@media (min-width: 992px) {
+    .challenges .bod-start+.bod-start {border-left: 1px solid #e0e0e0!important;}
+}
+
+
+/* WHAT WE DO */
+
+.what-we-do {margin-top: 70px!important;margin-bottom:0!important;padding-top: 70px!important;padding-bottom: 90px;background: white;}
+.what-we-do .img-bg {display: none!important;}
+.what-we-do .cta {background-color: #112953!important; border: none!important;}
+.services {margin-top: 70px !important;}
+.services .col-lg.ps-lg-5 {padding-bottom: 60px;align-content: center;}
+.service-text img {filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(177deg) brightness(41%) contrast(119%);}
+.what-we-do .services .service-name.active .inner .name {color: #112953;font-weight: 700!important;}
+.what-we-do .services .service-name .num {color: #112953!important;}
+.what-we-do .services .service-name.active .inner {border-left: 4px solid #ff743e;}
+.what-we-do .services .service-name+.service-name {border-top: 1px solid #e8e8e8!important;padding-top: 10px !important;padding-bottom: 10px !important;}
+.what-we-do .bod-end {border-right: 1px solid #112953!important;}
+#whatWeDo {margin-top:70px!important;}
+.service-text p {margin-bottom: 30px!important;}
+
+@media (min-width: 992px) {
+    .what-we-do .services .service-wrap .service-text .icon {margin-right: 40px !important;margin-left: 20px !important;}
+}
+
+
+/* WHY CDS */
+
+.why-cds {margin: 0!important;padding: 80px 25px 90px 25px!important;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10)!important;background:white!important;}  
+.why-cds .box {background: none!important;border: 1px solid #739dd2!important;border-radius: 8px!important;}
+.why-cds .p-4 {padding: 2.5rem 3rem !important;}
+.why-cds p {font-weight: 500!important;}
+
+
+/* CDS DIFFERENCE */
+
+.track-records {border: none!important;background: #112953!important;padding: 45px 0 65px 0!important;}
+.track-records h2 {color:white!important;}
+.track-records p {color:white!important;}
+
+
+
+
+
+
+
+
+/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* SERVICES PAGE STYLES */
+
+
+
+/* HERO */
+
+.hero__container {padding-top:40px!important;}
+.hero__note {padding-left: 8rem!important;background: #112953!important;}
+.hero__note .justify-content-center {justify-content: left !important;}
+.hero__note p {color: white!important;}
+.hero__note strong {color:#ff743e!important;}
+.hero__note .icon {display: none!important;}
+
+
+/* APPROACHES */
+
+.approaches {background-color: white!important;padding-top: 0!important;padding-bottom: 0!important;margin-top: 50px!important;margin-bottom: 0!important;}
+.approaches .col-md.ps-md-5 {padding-bottom: 30px;}
+.approaches .lifecycle-wrap h2 {display:none!important;}
+.approaches .wrap .approach-wrap {border-block: 1px solid #e0e0e0!important;}
+.approaches .wrap .approach-wrap .approach-row+.approach-row {border-top: 1px solid #e0e0e0!important;}
+.approaches h3 {font: 32px "Josefin Sans", sans-serif!important;color: #112953!important;font-weight: 600!important;}
+.ps-md-5 {padding-left: 5rem!important;}
+.approaches .lifecycle-wrap .column-text {display: none!important;}
+.approaches .lifecycle-wrap {padding: 8rem !important;background: #9c9c9c !important;}
+
+
+/* OUR HELP */
+
+.our-help {background-color: white!important;}
+.our-help .row-help-detail:nth-child(even) {background: white!important;}
+.our-help__head {background: #112953;padding-top: 30px !important;padding-bottom: 40px !important;box-shadow: 0 1px 6px rgba(0, 0, 0, 0) !important;}
+.our-help__content {padding-top: 40px!important;}
+.our-help .row-help-detail {border-bottom: 1px solid #e0e0e0;}
+.our-help__head h2  {color: white!important;font-weight: 600!important;font-size: 26px!important;}
+.our-help__list .select-help-option a {color: white!important;font: 400 15px "Inter", sans-serif!important;text-decoration: none!important;}
+.our-help__list .select-help-option .bar {color: #556787!important;font: 400 15px "Inter", sans-serif!important;margin: 0 5px!important;}
+
+
+
+
+
+
+
+
+/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* CONTACT PAGE STYLES */
+
+
+.sec.contact {background: white!important;}
+.contact h2 {color: #112953!important;}
+button.cta.orange.py-2.text-decoration-none.text-uppercase.d-inline-flex.align-items-center.rounded-3.px-3 {background-color: #112953!important;border:none!important;}
+body.page-contact .hero__wrap {margin-bottom:0!important;}
+body.page-contact .hero__container {padding-top: 40px!important;padding-bottom: 40px!important;}
+
+
+
+
+
+
+/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* ABOUT PAGE STYLES */
+
+
+.our-mission {background: #112953!important;padding-top: 80px;padding-bottom: 80px;}
+.our-mission h2 {color:white!important;}
+.our-mission p {color:white!important;}
+.our-mission .img-bg {display:none!important;}
+.approach {background-color: white !important;padding-top: 60px !important;padding-bottom: 80px !important;margin-top: 0 !important;margin-bottom: 0 !important;border: none !important;}
+.our-team {background: white!important;padding-bottom: 100px!important;}
+body.page-about-us .sec.img-copy {background: #ffffff !important;padding: 70px 0 90px 0;}
+body.page-about-us .hero__wrap {margin-bottom:0!important;}
+body.page-about-us .hero__container {padding-top: 40px!important;padding-bottom: 40px!important;}
+body.page-about-us .img-copy .col-md-3.col-lg-auto.d-none.d-md-block {display: none!important;}
+
+/* TEAM PHOTOS */
+
+.our-team .member .pic img {width: 100%;height: 100%;object-fit: cover;display: block;}

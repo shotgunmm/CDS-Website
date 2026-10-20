@@ -74,17 +74,21 @@ block content
                 -
                     const teamMembers = [
                         {
-                            name: 'Gary Marinosci'
+                            name: 'Gary Marinosci',
+                            pic: 'gary-marinosci'
                         },
                         {
                             name: 'Jennifer VonFlatern',
-                            role: 'Executive Vice President'
+                            role: 'Executive Vice President',
+                            pic: 'jennifer-vonflatern'
                         },
                         {
-                            name: 'Israel Solano'
+                            name: 'Israel Solano',
+                            pic: 'israel-solano'
                         },
                         {
-                            name: 'Daniel Lailer'
+                            name: 'Daniel Lailer',
+                            pic: 'daniel-lailer'
                         }
                     ]
 
@@ -92,6 +96,8 @@ block content
                     .col-md-6.mt-5
                         .member.d-flex.align-items-center
                             .pic.me-3
+                                if member.pic
+                                    +imgTag('team/' + member.pic, {ext: 'jpg', width: '96', height: '96'})
                             .copy
                                 h2.mb-0= member.name
                                 p= member.role || 'Title TBD'
