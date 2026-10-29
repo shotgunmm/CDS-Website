@@ -4,8 +4,10 @@ Mirror of `management/user/templates/default_site/` on the staging server
 (cds.shieldssgf.dev). The static HTML in the repo root is the design source;
 these are the EE templates that render it.
 
-Deploy: upload to `management/user/templates/default_site/` (SFTP). Templates are
-file-based, so no CP step is needed, but EE may cache output.
+Deploy: upload to `management/user/templates/default_site/` (SFTP). EE can also keep
+copies in the DB (`exp_templates`/`exp_snippets`, per the Book entry of 2026-10-20);
+the 2026-10-29 file uploads took effect, so files win here, but if an upload ever
+doesn't show, check the CP Template Manager copy. EE may also cache output.
 
 ## Notes
 - Help-section jump links and section ids use the Page Builder `anchor` field
