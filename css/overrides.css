@@ -270,3 +270,31 @@ body.page-about-us .img-copy .col-md-3.col-lg-auto.d-none.d-md-block {display: n
     .sec.img-copy .d-md-none {display: none!important;} /* About: mobile logo copy is opacity:0 above, leaving a blank block */
     .ps-md-5 {padding-left: 24px!important;} /* unscoped 5rem override indented the Services intro on phones */
 }
+
+
+/* PHONE + TABLET (< 992px) — the hamburger nav and "Select Service" dropdown are active here, but the desktop overrides above still apply */
+
+@media (max-width: 991.98px) {
+
+    /* Hamburger panel: desktop height/padding/border clipped the white panel to 50px so links spilled out transparent */
+    .nav_site {height: auto!important;padding-left: 0!important;border-left: 0!important;}
+    .header .nav_site li {padding-block: 0;}
+    .header .nav_site li a, .header .nav_site li .anchor {display: block;padding: 0.8rem 0;font-size: 16px!important;}
+    .header .nav_site.mob-nav {padding-bottom: 1.25rem;box-shadow: 0 8px 12px rgba(0, 0, 0, 0.12);}
+    .header .nav_site.mob-nav .cta.brand, .header .cta.brand.d-lg-none {min-height: 44px;}
+
+    /* Hamburger hit area: grow the tap target without moving the bars (the open "X" is positioned with transforms) */
+    .header .call_nav::before {content: "";position: absolute;inset: -16px;}
+
+    /* "Select Service" list: desktop rule paints links white (for the navy bar) but here the panel is white */
+    .our-help__list .select-help-option a {color: #112953!important;font: 500 16px "Inter", sans-serif!important;display: block;margin-block: 0!important;padding: 0.8rem 1rem;}
+    .our-help__list .select-help-option a:hover, .our-help__list .select-help-option a.active {color: #ff743e!important;}
+    .our-help__list .select-help-option {padding-block: 0.25rem!important;box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);}
+}
+
+@media (max-width: 767.98px) {
+
+    /* Footer link tap targets (17px tall before) */
+    .footer .link a {display: inline-block;padding-block: 0.5rem;}
+    .footer .link-terms a {display: inline-block;padding: 0.5rem 0.25rem;}
+}
