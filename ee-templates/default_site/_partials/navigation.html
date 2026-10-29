@@ -1,0 +1,24 @@
+
+<header class="header" id="header">
+	<div class="container-fluid wide site_header d-flex align-items-start align-items-lg-center">
+		<div class="brand me-lg-5">
+			<a href="/" aria-label="Home"><img src="/images/logo-thick.svg" alt="" height="64" width="300" loading="lazy" /></a>
+		</div>
+		<nav class="nav_site d-none d-lg-flex align-items-center" id="siteNav" aria-label="Navigation" role="navigation">
+			<a class="cta brand ms-lg-auto d-lg-none" href="/contact/">GET STARTED</a>
+			<ul class="nav">
+				{exp:nav_builder:menu name="header"}
+					<li>				        
+			            {if url != '' && url != '#'}
+			                <a href="{url}" target="{target}" {if is_current == 'yes'}class="active"{/if}>{item_title}</a>
+			            {if:else}
+			                <span class="anchor{if is_current == 'yes'} active{/if}">{item_title}</span>
+			            {/if}
+					</li>
+				{/exp:nav_builder:menu}
+			</ul>
+		</nav>
+		<a class="cta brand ms-lg-auto d-none d-lg-block" href="/contact/">GET STARTED</a>
+		<div class="call_nav align-items-center d-flex flex-column d-lg-none justify-content-center ms-auto" id="navCall" role="button" tabindex="0" aria-label="Toggle Navigation"><span class="line"></span><span class="line"></span><span class="line"></span></div>
+	</div>
+</header>

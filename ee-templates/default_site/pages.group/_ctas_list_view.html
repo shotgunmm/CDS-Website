@@ -1,0 +1,26 @@
+{if embed:url_title !=""}
+	{exp:channel:entries channel="ctas" dynamic="no" url_title="{embed:url_title}"}
+		<section class="sec-my hording shadow fade-in">
+			<div class="hording__bg-img">
+				{image_upload}
+					<img class="w-100" src="{url}" alt="{if description}{description}{if:else}{title}{/if}" loading="lazy" />
+				{/image_upload}
+			</div>
+			<div class="hording__container">
+				<div class="hording__wrap">
+					<h2 class="mb-4">{title}</h2>
+					{if cta_description !=""}
+						<p>{cta_description}</p>
+					{/if}
+					{cta}
+						{if cta:cta_title !=""}
+							<a class="cta orange" href="{cta:cta_url}" {if cta:open_in_new_window} target="_blank" rel="noopener noreferrer"{/if}>
+								{cta:cta_title}
+							</a>
+						{/if}
+				    {/cta}					
+				</div>
+			</div>
+		</section>	    
+	{/exp:channel:entries}		
+{/if}

@@ -1,0 +1,50 @@
+{exp:form_builder:form name="contact" class="form" id="contactfullForm"}
+
+	<div class="row">
+		{if has_errors}{errors_html}{/if}
+		{fields}
+			{if field_name == "firstname"}
+		        <div class="col-md-6 mb-4">
+		            {field_html}
+		        </div>
+		    {if:elseif field_name == "lastname"}
+		       <div class="col-md-6 mb-4">
+		            {field_html}
+		        </div>
+		    {if:elseif field_name == "company"}
+		        <div class="col-md-undefined mb-4">
+		            {field_html}
+		        </div>
+		    {if:elseif field_name == "emailaddress"}
+		       <div class="col-md-undefined mb-4">
+		            {field_html}
+		        </div>
+		    {if:elseif field_name == "phone"}
+		        <div class="col-md-undefined mb-4">
+		            {field_html}
+		        </div>
+		    {if:elseif field_name == "message"}
+		        <div class="col-md-12 mb-4">
+		            {field_html}
+		        </div>
+		    {/if}
+			
+		{/fields}
+		<div class="col-12 d-none" aria-hidden="true">
+			<input class="form-field" type="text" name="website" tabindex="-1" autocomplete="off" />
+		</div>
+		<div class="col-12">
+			<input type="hidden" name="form" value="contact" />
+		</div>
+		<div class="col-md-12 mt-4 form-field" style="display: none">
+	    	<div class="alert alert-danger form-error"></div>
+	    </div>
+		<div class="cta-row mt-3">
+			{!-- }<div class="captcha me-md-3 mb-5 mb-md-0"><img src="/images/reCAPTCHA.jpg" alt="" loading="lazy" /></div>{ --}
+			<button class="cta orange">submit inquiry</button>
+		</div>
+		<div class="col-12">
+			<p class="form-status d-none" role="status"></p>
+		</div>
+	</div>
+{/exp:form_builder:form}
