@@ -3,8 +3,9 @@ include helpers.pug
 mixin footer()
     - servicesLinks = ['Foreclosure Oversight', 'Bankruptcy Oversight', 'Litigation Oversight', 'Eviction Oversight']
     - companyLinks = ['About Us', 'Services', 'Contact']
+    - serviceAnchor = function(link) { return pageHref('Services') + '#' + slugify(link); }
 
-    mixin linksCall(head, links)
+    mixin linksCall(head, links, hrefFn)
         .col-md-4.col-lg-auto.mb-5.mb-md-4
             .links
                 h2.text-uppercase.mb-0= head
@@ -12,7 +13,7 @@ mixin footer()
                     each link in links
                         li
                             //- a(href=pageHref(link))= link
-                            a(href='#')= link
+                            a(href=hrefFn ? hrefFn(link) : '#')= link
 
     footer.footer
         .container-fluid.wide
@@ -24,7 +25,7 @@ mixin footer()
                         .meta
                             p Trusted oversight partner providing cradle-to-grave default services management for mortgage servicers and financial institutions nationwide.
 
-                +linksCall('Services', servicesLinks)
+                +linksCall('Services', servicesLinks, serviceAnchor)
                 +linksCall('company', companyLinks)
                 .col-md-auto.mb-4
                     .links
