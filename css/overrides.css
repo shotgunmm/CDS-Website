@@ -241,15 +241,15 @@ body.page-about-us .img-copy .col-md-3.col-lg-auto.d-none.d-md-block {display: n
     /* Hero + CTA white panels */
     .hero__wrap, .hording__wrap {padding: 2.5rem 1.5rem 2.5rem!important;}
     .hero__wrap {margin-bottom: 0!important;}
-    .hero__container, body.page-contact .hero__container, body.page-about-us .hero__container {padding-top: 24px!important;padding-bottom: 24px!important;}
+    .hero__container, body.page-contact .hero__container, body.page-about-us .hero__container {padding-top: 0!important;padding-bottom: 0!important;background: #fff;} /* padding here let the grey body background show as bands above/below the white panel */
     .hero h2 {font-size: 36px;}
     .hero__note {padding: 1.5rem!important;}
     .hording__container {padding: 0!important;}
-    .sec-my.hording {margin-top: 40px!important;margin-bottom: 40px!important;}
+    .sec-my, .sec-my.hording {margin-top: 0!important;margin-bottom: 0!important;} /* margins between sections exposed the grey body background */
 
     /* Section rhythm */
     .challenges {padding: 48px 0 56px!important;}
-    .what-we-do {margin-top: 40px!important;padding-top: 40px!important;padding-bottom: 56px!important;}
+    .what-we-do {margin-top: 0!important;padding-top: 40px!important;padding-bottom: 56px!important;}
     #whatWeDo, .services {margin-top: 32px!important;}
     .why-cds {padding: 48px 0 56px!important;}
     .why-cds .p-4 {padding: 1.5rem!important;}
@@ -290,6 +290,9 @@ body.page-about-us .img-copy .col-md-3.col-lg-auto.d-none.d-md-block {display: n
     .our-help__list .select-help-option a {color: #112953!important;font: 500 16px "Inter", sans-serif!important;display: block;margin-block: 0!important;padding: 0.8rem 1rem;}
     .our-help__list .select-help-option a:hover, .our-help__list .select-help-option a.active {color: #ff743e!important;}
     .our-help__list .select-help-option {padding-block: 0.25rem!important;box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);}
+
+    /* Sticky "How can we help?" bar is ~186px tall here and each section has 40px top padding; the old 140-150px offset tucked headings under it */
+    html:has(.our-help) {scroll-padding-top: 180px;}
 }
 
 @media (max-width: 767.98px) {
