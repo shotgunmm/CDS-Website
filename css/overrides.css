@@ -13,12 +13,19 @@ body {background: #eeeeee;}
 p, h1, h2, h3 {letter-spacing: normal!important;}
 h3 {margin-bottom: 20px;line-height:1.4!important;}
 .cta {padding: 12px 25px!important;}
+/* app.js used to add these (rounded-3 etc.) after DOMContentLoaded, so CTAs painted square and then animated to rounded. Set them in CSS from first paint. */
+.cta {border-radius: .5rem;display: inline-flex;align-items: center;text-decoration: none;text-transform: uppercase;}
 .heading h2.text-uppercase {display: none;}
 
 
 /* NAV */
 
-.header {border:none!important;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);background: white;padding: 10px 0;}
+.header {border:none!important;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);background: white;padding: 10px 0;position: sticky;top: 0;}
+/* Sticky header: --header-h is set from the header's height in app.js; the services help bar and anchor offsets stack beneath it */
+.our-help__head {top: var(--header-h, 0px);}
+html:has(.our-help) {scroll-padding-top: calc(var(--header-h, 0px) + 140px);}
+@media (min-width: 768px) {html:has(.our-help) {scroll-padding-top: calc(var(--header-h, 0px) + 150px);}}
+@media (min-width: 1650px) {html:has(.our-help) {scroll-padding-top: calc(var(--header-h, 0px) + 120px);}}
 ul.nav a {font-weight: 500;}
 .header .nav_site a, .header .nav_site .anchor {font-weight: 500;font-size: 15px!important;}
 .brand img {width: 300px;max-width: 100%;height: auto;}
@@ -292,7 +299,7 @@ body.page-about-us .img-copy .col-md-3.col-lg-auto.d-none.d-md-block {display: n
     .our-help__list .select-help-option {padding-block: 0.25rem!important;box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);}
 
     /* Sticky "How can we help?" bar is ~186px tall here and each section has 40px top padding; the old 140-150px offset tucked headings under it */
-    html:has(.our-help) {scroll-padding-top: 180px;}
+    html:has(.our-help) {scroll-padding-top: calc(var(--header-h, 0px) + 180px);}
 }
 
 @media (max-width: 767.98px) {

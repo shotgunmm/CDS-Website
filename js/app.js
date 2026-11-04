@@ -29,7 +29,20 @@ function fadeInSec() {
 	fadeInEle.forEach((ele) => observer.observe(ele));
 }
 
+function trackHeaderHeight() {
+	// Sticky header: expose its height so the sticky help bar and anchor offsets sit beneath it
+	const header = document.getElementById('header');
+
+	if (!header) return;
+
+	const setHeight = () => document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+
+	setHeight();
+	new ResizeObserver(setHeight).observe(header);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+	trackHeaderHeight();
 	fadeInSec();
 	domCta();
 });
