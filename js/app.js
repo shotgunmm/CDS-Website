@@ -41,8 +41,26 @@ function trackHeaderHeight() {
 	new ResizeObserver(setHeight).observe(header);
 }
 
+function settleHashScroll() {
+	// Arriving on /services/#section: the browser scrolls at load, then lazy images and the fade-in slide shift the layout. Re-scroll once things settle, unless the visitor has already started scrolling.
+	const target = location.hash.length > 1 ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+
+	if (!target) return;
+
+	let userScrolled = false;
+	['wheel', 'touchmove', 'keydown', 'mousedown'].forEach((evt) => window.addEventListener(evt, () => (userScrolled = true), { once: true, passive: true }));
+
+	const settle = () => {
+		if (!userScrolled) target.scrollIntoView({ behavior: 'instant' });
+	};
+
+	window.addEventListener('load', () => setTimeout(settle, 150));
+	setTimeout(settle, 900);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	trackHeaderHeight();
+	settleHashScroll();
 	fadeInSec();
 	domCta();
 });
