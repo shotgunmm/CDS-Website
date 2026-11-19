@@ -309,3 +309,8 @@ body.page-about-us .img-copy .col-md-3.col-lg-auto.d-none.d-md-block {display: n
     .footer .link a {display: inline-block;padding-block: 0.5rem;}
     .footer .link-terms a {display: inline-block;padding: 0.5rem 0.25rem;}
 }
+
+
+/* THANK YOU PAGE */
+
+body.page-thank-you .sec.img-copy p, body.page-thank-you .sec.img-copy p b {color: #ffffff !important;}
